@@ -80,3 +80,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Customisations
+# ===========
+TEMPLATE_DIRS = ( BASE_DIR + "/templates" )
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "templates/static")
+STATICFILES_FINDERS = ('static_precompiler.finders.StaticPrecompilerFinder',)
