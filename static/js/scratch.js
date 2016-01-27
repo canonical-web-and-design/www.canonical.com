@@ -213,6 +213,18 @@ YUI().use('node', 'cookie', 'event-resize', 'event', 'jsonp', 'json-parse', func
     }
   }
 
+  core.setupAccordion = function() {
+    Y.all('.row-project li').each(function(node) {
+      node.one('h3').append('<span></span>');
+      node.one('a').on('click',function(e) {
+        e.preventDefault();
+        this.toggleClass('active');
+        this.next('div').toggleClass('active');
+      });
+    });
+  };
+
+  core.setupAccordion();
   core.cookiePolicy();
   core.setupHtmlClass();
   core.sectionTabs();
