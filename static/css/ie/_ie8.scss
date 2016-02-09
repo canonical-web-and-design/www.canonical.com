@@ -1,5 +1,7 @@
 ///Overrides to give a passable experience in IE8 - essentially JS-free mobile view with large-screen navigation
 .lt-ie9 {
+  * { zoom: 1; }
+
   #nav-global {
     display: none;
   }
@@ -12,7 +14,6 @@
   }
 
   .banner {
-    border-bottom: 1px solid lighten($mobile-nav, 60%);
     box-shadow: none;
 
     .nav-primary {
@@ -96,5 +97,26 @@
         border-right: 1px solid transparent;
       }
     }
+  }
+
+  // .tabbed-content {
+  //   &.hide {
+  //     display: block;
+  //     opacity: 1;
+  //   }
+  //
+  //   .title {
+  //     display: block;
+  //   }
+  //
+  //   div {
+  //     display: block;
+  //   }
+  // }
+
+  &.yui3-js-enabled .tabbed-content div,
+  .hide {
+    display: block;
+    opacity: 1;
   }
 }
