@@ -85,6 +85,8 @@ core scss files are in /sites/core/static/css
 @import 'toggle-menu';
 @include canonical-toggle-menu;
 
+@import 'ie/ie8';
+
 html, body { height: 100%; }
 
 html {
