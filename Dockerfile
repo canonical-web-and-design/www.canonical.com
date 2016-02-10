@@ -1,4 +1,4 @@
-FROM ubuntudesign/python-auth
+FROM python:3
 
 # Pip requirements files
 COPY requirements /requirements

@@ -1,26 +1,18 @@
-SHELL := /bin/bash  # Use bash syntax
+export COMPOSE_PROJECT_NAME ?= $(shell echo $(subst _,,$(subst -,,$(shell basename `pwd`))) | tr A-Z a-z)
+export COMPOSE_FILE ?= docker-compose.makefile.yml
+export PORT ?= 8002
 
-# Settings
-# ===
-
-# Default port for the dev server - can be overridden e.g.: "PORT=1234 make run"
-ifeq ($(PORT),)
-	PORT=8002
+DOCKER_IP := 127.0.0.1
+ifdef DOCKER_HOST
+	DOCKER_IP := $(shell echo ${DOCKER_HOST} | grep -oP '(\d+\.){3}\d+')
 endif
-
-# Settings
-# ===
-PROJECT_NAME=canonicalwebsite
-APP_IMAGE=${PROJECT_NAME}_web
-DB_CONTAINER=${PROJECT_NAME}_db_1
-SASS_CONTAINER=${PROJECT_NAME}_sass_1
 
 # Help text
 # ===
 
 define HELP_TEXT
 
-${PROJECT_NAME} - A Django website by the Canonical web team
+www.canonical.com - A Django website by the Canonical web team
 ===
 
 Basic usage
@@ -34,138 +26,47 @@ All commands
 ---
 
 > make help               # This message
-> make run                # build, watch-sass and run-site
+> make run                # build, watch-sass and run-site (in background)
+> make logs               # watch the logs for the site
+> make clean-images       # Delete all created images and containers
+> make clean-css          # Delete compiled css
+> make clean-npm          # Delete node_modules
+> make clean-all          # Run all clean commands
 > make it so              # a fun alias for "make run"
-> make build-app-image    # Build the docker image
-> make run-site           # Use Docker to run the website
-> make watch-sass         # Setup the sass watcher, to compile CSS
-> make compile-sass       # Setup the sass watcher, to compile CSS
-> make stop-sass-watcher  # If the watcher is running in the background, stop it
-> make clean              # Delete all created images and containers
 
 (To understand commands in more details, simply read the Makefile)
 
 endef
 
-##
-# Print help text
-##
 help:
 	$(info ${HELP_TEXT})
 
-##
-# Use docker to run the sass watcher and the website
-##
 run:
-	# Make sure IP is correct for mac etc.
-	$(eval docker_ip := `hash boot2docker 2> /dev/null && echo "\`boot2docker ip\`" || echo "127.0.0.1"`)
-	if [[ -z "`docker images -q ubuntudesign/python-auth`" ]]; then docker pull ubuntudesign/python-auth; fi
-	@cat docker-compose.yml | sed 's/8002/${PORT}/g' | docker-compose --file=- up -d web # Run Django
-	@echo ""
-	@echo "== Running server on http://${docker_ip}:${PORT} =="
-	@echo ""
-	@echo "== Building SCSS =="
-	@echo ""
-
-	@docker-compose up npm            # Build `node_modules`
-	@docker-compose up sass           # Build CSS into `static/css`
-	@echo ""
-	@echo "== Built SCSS =="
-	@echo ""
-
-	@docker-compose up -d sass-watch  # Watch SCSS files for changes
-
-	@echo ""
-	@echo "======================================="
-	@echo "Running server on http://${docker_ip}:${PORT}"
-	@echo "To stop the server, run 'make stop'"
-	@echo "To get server logs, run 'make logs'"
-	@echo "======================================="
-	@echo ""
-
-##
-# Build the docker image
-##
-build-app-image:
-	docker-compose build
-
-stop:
-	@docker-compose stop -t 2
+	docker-compose up -d
+	@echo "==\nServer running at: http://${DOCKER_IP}:${PORT}\n=="
 
 logs:
-	@docker-compose logs
+	docker-compose logs
 
-##
-# Create or start the sass container, to rebuild sass files when there are changes
-##
-watch-sass:
-	$(eval is_running := `docker inspect --format="{{ .State.Running }}" ${SASS_CONTAINER} 2>/dev/null || echo "missing"`)
-	@if [[ "${is_running}" == "true" ]]; then docker attach ${SASS_CONTAINER}; fi
-	@if [[ "${is_running}" == "false" ]]; then docker start -a ${SASS_CONTAINER}; fi
-	@if [[ "${is_running}" == "missing" ]]; then docker run --name ${SASS_CONTAINER} -v `pwd -P`:/app ubuntudesign/sass sass --debug-info --watch /app/static/css; fi
-
-##
-# Force a rebuild of the sass files
-##
-compile-sass:
-	docker run -v `pwd -P`:/app ubuntudesign/sass sass --debug-info --update /app/static/css --force -E "UTF-8"
-
-##
-# Re-create the app image (e.g. to update dependencies)
-##
-rebuild-app-image:
+stop:
 	docker-compose kill
-	docker-compose build web
 
-##
-# Make a demo
-##
-hub-image:
-	${MAKE} build-app-image
-	$(eval current_branch := `git rev-parse --abbrev-ref HEAD`)
-	$(eval image_location := "ubuntudesign/${APP_IMAGE}:${current_branch}")
-	$(eval app_name := "${PROJECT_NAME}-${current_branch}")
-	docker tag -f ${APP_IMAGE} ${image_location}
-	docker push ${image_location}
-	@echo ""
-	@echo "==="
-	@echo "Image pushed to: ${image_location} http://${PROJECT_NAME}-${current_branch}.ubuntu.qa/"
-	@echo "==="
-	@echo ""
+clean-images:
+	docker-compose kill
+	docker-compose rm -f
+	docker rmi -f ${COMPOSE_PROJECT_NAME}_web || true
 
-##
-# Delete created images and containers
-##
-clean:
-	$(eval destroy_images := $(shell bash -c 'read -p "Destroy images? (y/n): " yn; echo $$yn'))
-	$(eval delete_css := $(shell bash -c 'read -p "Delete compiled CSS? (y/n): " yn; echo $$yn'))
-	$(eval delete_node_modules := $(shell bash -c 'read -p "Delete node_modules? (y/n): " yn; echo $$yn'))
+clean-css:
+	docker-compose run sass find static/css -name '*.css' -exec rm {} \;
+	docker-compose run sass rm -rf /tmp/*;
 
-	@if [[ "${delete_css}" == "y" ]]; then \
-	  find static/css -name '*.css' | xargs rm -fv ;\
-	  rm -rfv .sass-cache ;\
-	  echo "Compiled CSS removed" ;\
-	fi
+clean-npm:
+	docker-compose run npm rm -rf node_modules
 
-	@if [[ "${delete_node_modules}" == "y" ]]; then \
-	  rm -rfv node_modules ;\
-	fi
-
-	@if [[ "${destroy_images}" == "y" ]]; then \
-	  docker-compose rm -f ;\
-	  echo "Images and containers removed" ;\
-	  docker-compose kill ;\
-	fi
-
-# Clean without prompting
 clean-all:
-	yes | ${MAKE} clean
+	${MAKE} clean-css
+	${MAKE} clean-npm
+	${MAKE} clean-images
 
-##
-# "make it so" alias for "make run" (thanks @karlwilliams)
-##
 it:
 so: run
-
-# Phone targets (don't correspond to files or directories)
-.PHONY: help build stop logsrun run-site watch-sass compile-sass stop-sass-watcher rebuild-app-image it so
