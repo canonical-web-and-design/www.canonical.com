@@ -1,6 +1,5 @@
 from django_template_finder_view import TemplateFinder
-from django.http import HttpResponseNotFound, HttpResponseServerError, HttpResponse
-from django.template import RequestContext, loader, Context
+
 
 class CanonicalTemplateFinder(TemplateFinder):
     def get_context_data(self, **kwargs):
