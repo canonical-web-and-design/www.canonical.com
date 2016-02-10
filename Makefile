@@ -1,6 +1,6 @@
-export COMPOSE_PROJECT_NAME ?= $(shell echo $(subst _,,$(subst -,,$(shell basename `pwd`))) | tr A-Z a-z)make
+export COMPOSE_PROJECT_NAME ?= $(shell echo $(subst _,,$(subst -,,$(shell basename `pwd`))) | tr A-Z a-z)
 export COMPOSE_FILE ?= docker-compose.makefile.yml
-export PORT ?= 8001
+export PORT ?= 8002
 
 DOCKER_IP := 127.0.0.1
 ifdef DOCKER_HOST
