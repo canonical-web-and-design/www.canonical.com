@@ -233,3 +233,34 @@ YUI().use('node', 'cookie', 'event-resize', 'event', 'jsonp', 'json-parse', func
   core.svgFallback();
   core.resizeListener();
 });
+
+core.rssLoader = function(feedurl, jobType, htmlelement, joblimit) {
+    $.getFeed({
+        url: feedurl,
+        success: function(feed) {
+            var html = '';
+            /* correct grammar for 0 and 1 on total list item */
+            if (feed.items.length === 0) {
+                html += '<li class="total">Sorry, we currently have no ' + jobType + ' vacancies';
+            } else if (feed.items.length === 1) {
+                html += '<li class="total">We currently have ' + feed.items.length + ' ' + jobType + ' vacancy';
+            } else {
+                html += '<li class="total">We currently have ' + feed.items.length + ' ' + jobType + ' vacancies';
+            }
+
+            /* set a default limit for number of jobs returned */
+            if (joblimit == undefined) {
+                joblimit = 5;
+            }
+
+            for(var i = 0; i < feed.items.length && i < joblimit; i++) {
+                var item = feed.items[i];
+                html += "<li><a href='" + item.link + "'>" + item.title + "&nbsp;&rsaquo;</a></li>";
+            }
+
+            /* hide the gif spinner */
+            $('.spinner').hide();
+            $(htmlelement).append(html);
+        }
+    })
+};
