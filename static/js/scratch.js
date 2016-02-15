@@ -264,3 +264,23 @@ core.rssLoader = function(feedurl, jobType, htmlelement, joblimit) {
         }
     })
 };
+
+core.getInsightsFeed = function(url, maxItems, htmlID, type) {
+    $.getFeed({
+      url: url,
+      success: function(feed) {
+      var html = "";
+      for(var i = 0; i < feed.items.length && i < maxItems; i++) {
+        var item = feed.items[i];
+        if (type == "resource") {
+          html += "<li><a href='{0}'>{1}</a><p class='note'>{2}</p></li>".format(item.link, item.title, item.category);
+        } else {
+          html += "<li><a href='{0}'>{1}</a><p class='note'><time pubdate datetime='{2}'>{3}</time></p></li>".format(item.link, item.title, item.updated, item.nicedate);
+        }
+      }
+      if ($(htmlID)) {
+        $(htmlID).append(html);
+      }
+    }
+  });
+}

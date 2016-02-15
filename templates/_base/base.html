@@ -44,24 +44,34 @@
 
 <body class="{% if level_1 != "" %}{% if level_1 == '2012' %}body-{% endif %}{{ level_1 }}{% endif %}{% if level_2 %} {% if level_1 == '2012' %}body-{% endif %}{{ level_1 }}-{{ level_2 }}{% endif %}{% if level_3 %} {% if level_1 == '2012' %}body-{% endif %}{{ level_1 }}-{{ level_2 }}-{{ level_3 }} {% endif %} {% include "_base/body-class.html" %}{% if extra_body_class != "" %} {% block extra_body_class %}{% endblock %}{% endif %}" itemscope itemtype="http://schema.org/Product">
 
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-K92JCQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K92JCQ');</script>
+<!-- End Google Tag Manager -->
+
 <header class="banner global" role="banner">
 {% block header_banner %}
-	<nav role="navigation" class="nav-primary nav-right" id="nav">
+    <nav role="navigation" class="nav-primary nav-right" id="nav">
         <span id="main-navigation-link"><a href="#main-navigation">Jump to site nav</a></span>
-		<div class="logo">
-			<a href="/">
-				<img width="139" height="19" src="{{ ASSET_SERVER_URL }}28af8f85-footer_logo.png" alt="Canonical logo for print" />
-			</a>
-		</div>
-		<ul>
-			<li class="accessibility-aid"><a accesskey="s" href="#main-content">Jump to content</a></li>
-			<li><a class="first{% if level_1 == 'products' %} active{% endif %}" href="/products">Products</a></li>
-			<li><a{% if level_1 == 'services' %} class="active"{% endif %} href="/services">Services</a></li>
-			<li><a{% if level_1 == 'partners' %} class="active"{% endif %} href="/partners">Partners</a></li>
-			<li><a{% if level_1 == 'about' %} class="active"{% endif %} href="/about">About</a></li>
-			<li><a{% if level_1 == 'careers' %} class="active"{% endif %} href="/careers">Careers</a></li>
-		</ul>
-	</nav>
+        <div class="logo">
+            <a href="/">
+                <img width="139" height="19" src="{{ ASSET_SERVER_URL }}28af8f85-footer_logo.png" alt="Canonical logo for print" />
+            </a>
+        </div>
+        <ul>
+            <li class="accessibility-aid"><a accesskey="s" href="#main-content">Jump to content</a></li>
+            <li><a class="first{% if level_1 == 'products' %} active{% endif %}" href="/products">Products</a></li>
+            <li><a{% if level_1 == 'services' %} class="active"{% endif %} href="/services">Services</a></li>
+            <li><a{% if level_1 == 'partners' %} class="active"{% endif %} href="/partners">Partners</a></li>
+            <li><a{% if level_1 == 'about' %} class="active"{% endif %} href="/about">About</a></li>
+            <li><a{% if level_1 == 'careers' %} class="active"{% endif %} href="/careers">Careers</a></li>
+        </ul>
+    </nav>
     <div class="nav-toggle">
         <a href="#nav" class="nav-toggle__link open"></a>
         <a href="#" class="nav-toggle__link close"></a>
@@ -87,17 +97,17 @@
 {% include "_base/footer.html" %}
 
 <script>
-	var isOperaMini = (navigator.userAgent.indexOf('Opera Mini') > -1);
-	if(isOperaMini) {
-		var root = document.documentElement;
-		root.className += " opera-mini";
-	}
+  var isOperaMini = (navigator.userAgent.indexOf('Opera Mini') > -1);
+  if(isOperaMini) {
+    var root = document.documentElement;
+    root.className += " opera-mini";
+  }
 </script>
 
 <script src="{{ ASSET_SERVER_URL }}6124a084-yui-min.js"></script>
 <script>
-	if(!core){ var core = {}; }
-	core.globalPrepend = 'body';
+  if(!core){ var core = {}; }
+  core.globalPrepend = 'body';
 </script>
 
 <!--[if gte IE 9]><!-->
@@ -106,29 +116,5 @@
 <!--<![endif]-->
 
 {% block footer_extra %}{% endblock %}
-
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-1018242-5']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-
-{% if enable_crazyegg %}
-	<script type="text/javascript">
-	   setTimeout(function(){var a=document.createElement("script");
-	   var b=document.getElementsByTagName('script')[0];
-	   a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0011/8875.js?"+Math.floor(new Date().getTime()/3600000);
-	   a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
-
-	</script>
-{% endif %}
 </body>
 </html>

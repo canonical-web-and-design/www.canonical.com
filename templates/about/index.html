@@ -559,56 +559,18 @@ google.maps.event.addDomListener(window, 'load', initialize);
       </div><!-- /col -->
     </div><!-- /inner-wrapper -->
   </div><!-- /row -->
-
-  <!-- script to get news, white papers and case studies -->
-  <script type="text/javascript">
-    /* News */
-    $(function() {
-      $.getFeed({
-        url: 'https://insights.ubuntu.com/category/news/feed/',
-        success: function(feed) {
-          var html = "";
-          for(var i = 0; i < feed.items.length && i < 4; i++) {
-            var item = feed.items[i];
-            html += "<li><a href='" + item.link + "'>" + item.title + "</a><p class='note'><time pubdate datetime='" + item.updated + "'>" + item.nicedate + "</time></p></li>";
-          }
-          if ($('#news-feed')) {
-            $('#news-feed').append(html);
-          }
-        }
-      });
-    });
-    /* Whitepapers */
-    $(function() {
-      $.getFeed({
-        url: 'https://insights.ubuntu.com/category/white-papers/feed/',
-        success: function(feed) {
-          var html = "";
-          for(var i = 0; i < feed.items.length && i < 2; i++) {
-            var item = feed.items[i];
-            html += "<li><a href='" + item.link + "'>" + item.title + "</a><p class='note'>" + item.category + "</p></li>";
-          }
-          if ($('#resources-feed')) {
-            $('#resources-feed').append(html);
-          }
-        }
-      });
-    });
-    /* Case studies */
-    $(function() {
-      $.getFeed({
-        url: 'https://insights.ubuntu.com/category/case-studies/feed/',
-        success: function(feed) {
-          var html = "";
-          for(var i = 0; i < feed.items.length && i < 2; i++) {
-            var item = feed.items[i];
-            html += "<li><a href='" + item.link + "'>" + item.title + "</a><p class='note'>" + item.category + "</p></li>";
-          }
-          if ($('#resources-feed')) {
-            $('#resources-feed').append(html);
-          }
-        }
-      });
-    });
-  </script>
 {% endblock content %}
+
+{% block footer_extra %}
+<!-- script to get news, white papers and case studies -->
+<script type="text/javascript">
+  /* News */
+  core.getInsightsFeed('https://insights.ubuntu.com/category/news/feed/', 4, '#news-feed', 'news');
+
+  /* Whitepapers */
+  core.getInsightsFeed('https://insights.ubuntu.com/category/white-papers/feed/', 2, '#resources-feed', 'resource');
+
+  /* Case studies */
+  core.getInsightsFeed('https://insights.ubuntu.com/category/case-studies/feed/', 2, '#resources-feed', 'resource');
+</script>
+{% endblock footer_extra %}
