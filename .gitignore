@@ -11,3 +11,4 @@ templates/static/css/styles.css
 bzr-repo/
 django-error.log
 node_modules/
+.web_cache/
