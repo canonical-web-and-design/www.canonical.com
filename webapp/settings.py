@@ -31,13 +31,23 @@ USE_TZ = True
 STATIC_ROOT = 'static'
 STATIC_URL = '/static/'
 STATICFILES_FINDERS = ['django_static_root_finder.StaticRootFinder']
-TEMPLATE_DIRS = ["templates"]
 ASSET_SERVER_URL = 'https://assets.ubuntu.com/v1/'
 
-# See http://tinyurl.com/django-context-processors
-TEMPLATE_CONTEXT_PROCESSORS = [
-    "django.core.context_processors.static",  # Provides STATIC_URL
-    "django_asset_server_url.asset_server_url",  # {{ ASSET_SERVER_URL }}
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'builtins': [
+                'webapp.templatetags.feeds',
+            ],
+            'context_processors': [
+                'django.template.context_processors.static',
+                'django_asset_server_url.asset_server_url',
+            ],
+        },
+    },
 ]
 
 LOGGING = {

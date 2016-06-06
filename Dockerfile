@@ -9,4 +9,4 @@ RUN pip install -r /requirements/dev.txt
 COPY . /app
 WORKDIR /app
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:5000"]
+CMD ["python3", "manage.py", "runserver", "0.0.0.0:5000"]
