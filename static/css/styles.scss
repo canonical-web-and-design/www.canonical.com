@@ -1081,6 +1081,13 @@ html.no-svg {
     width: auto;
     max-width: 15em;
   }
+
+  /// XXX Peter - marketo required field marker
+  .mktoLabel > span,
+  .mktError {
+    color: #df382c;
+  }
+
   blockquote.pull-quote p span {
     top: 5px;
   }
