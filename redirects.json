@@ -403,5 +403,6 @@
   "intellectual-property-rights-policy/contact-us": "http://www.ubuntu.com/legal/terms-and-policies/contact-us",
   "intellectual-property-rights-policy/thank-you": "http://www.ubuntu.com/legal/terms-and-policies/contact-us",
   "privacy-policy": "http://www.ubuntu.com/legal/terms-and-policies/privacy-policy",
-  "privacy-policy/": "http://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+  "privacy-policy/": "http://www.ubuntu.com/legal/terms-and-policies/privacy-policy",
+  "livepatch": "http://auth.livepatch.canonical.com"
 }
