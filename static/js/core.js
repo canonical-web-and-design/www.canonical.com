@@ -76,4 +76,24 @@ core.setupTabs = function (menuAnchors, tabItems) {
       }(menuAnchors, tabItems)
     );
   });
+
+
+/**
+ * Given a DOM element containing an <a> and a <div>,
+ * Setup the <a> to toggle showing and hiding of the <div>
+ */
+core.setupAccordion = function(container) {
+  container.querySelector('h3').appendChild(document.createElement('span'));
+  toggleTarget = container.querySelector('div');
+  container.querySelector('a').addEventListener(
+    'click',
+    function (target) {
+      return function(clickEvent) {
+        clickEvent.preventDefault();
+        toggleAnchor = clickEvent.target.closest('a');
+        toggleAnchor.classList.toggle('active');
+        target.classList.toggle('active');
+      };
+    }(toggleTarget)
+  );
 };

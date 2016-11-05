@@ -206,3 +206,9 @@
 		  </div>
 		</div>
 {% endblock content %}
+
+{% block footer_extra %}
+<script>
+	document.querySelectorAll('.row-project li').forEach(core.setupAccordion);
+</script>
+{% endblock %}
