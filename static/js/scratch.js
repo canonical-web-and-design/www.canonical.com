@@ -19,26 +19,6 @@ YUI().use('node', 'cookie', 'event-resize', 'event', 'jsonp', 'json-parse', func
     });
   };
 
-  core.cookiePolicy = function() {
-    function open() {
-      Y.one('body').prepend('<div class="cookie-policy"><div class="wrapper"><a href="?cp=close" class="link-cta">Close</a><p>We use cookies to improve your experience. By your continued use of this site you accept such use. To change your settings please <a href="/privacy-policy#cookies">see our policy</a>.</p></div></div>');
-      Y.one('.cookie-policy .link-cta').on('click',function(e){
-        e.preventDefault();
-        close();
-      });
-    }
-    function close() {
-      Y.one('.cookie-policy').setStyle('display','none');
-      setCookie();
-    }
-    function setCookie() {
-      Y.Cookie.set("_cookies_accepted", "true", { expires: new Date("January 12, 2025") });
-    }
-    if(Y.Cookie.get("_cookies_accepted") != 'true'){
-      open();
-    }
-  };
-
   core.tabbedContent = function() {
     Y.all('.tabbed-content .accordion-button').on('click', function(e){
       e.preventDefault();
@@ -175,7 +155,6 @@ YUI().use('node', 'cookie', 'event-resize', 'event', 'jsonp', 'json-parse', func
   };
 
   core.setupAccordion();
-  core.cookiePolicy();
   core.sectionTabs();
   core.tabbedContent();
   core.resizeListener();
