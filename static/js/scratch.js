@@ -12,11 +12,6 @@ String.prototype.format = function() {
 };
 
 YUI().use('node', 'cookie', 'event-resize', 'event', 'jsonp', 'json-parse', function(Y) {
-
-  core.setupHtmlClass = function() {
-    Y.one('html').removeClass('no-js').addClass('yes-js');
-  }
-
   core.setupAdditionalInfo = function() {
     Y.one('.find-out-more').setStyle('cursor', 'pointer').on('click',function(e) {
         this.toggleClass('active');
@@ -215,7 +210,6 @@ YUI().use('node', 'cookie', 'event-resize', 'event', 'jsonp', 'json-parse', func
 
   core.setupAccordion();
   core.cookiePolicy();
-  core.setupHtmlClass();
   core.sectionTabs();
   core.tabbedContent();
   core.svgFallback();
