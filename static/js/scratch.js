@@ -193,15 +193,6 @@ YUI().use('node', 'cookie', 'event-resize', 'event', 'jsonp', 'json-parse', func
     }
   };
 
-  core.homeAnimation = function() {
-    if(Y.one('body').hasClass('home')){
-      var anim = Y.one('.animation');
-      if(anim != null) {
-        anim.addClass('run');
-      }
-    }
-  };
-
   core.extendGlobalNav = function() {
     core.setupGlobalNav();
     if (navGlobal = Y.one('#nav-global')) {
@@ -229,7 +220,6 @@ YUI().use('node', 'cookie', 'event-resize', 'event', 'jsonp', 'json-parse', func
   core.setupHtmlClass();
   core.sectionTabs();
   core.tabbedContent();
-  core.homeAnimation();
   core.svgFallback();
   core.resizeListener();
 });
