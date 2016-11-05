@@ -19,13 +19,6 @@ YUI().use('node', 'cookie', 'event-resize', 'event', 'jsonp', 'json-parse', func
     });
   };
 
-  core.tabbedContent = function() {
-    Y.all('.tabbed-content .accordion-button').on('click', function(e){
-      e.preventDefault();
-      e.target.get('parentNode').toggleClass('open');
-    });
-  };
-
   core.sectionTabs = function () {
     if (Y.one('.tabbed-content')) {
       var p = Y.one('.tabbed-menu a.active'),
@@ -117,7 +110,6 @@ YUI().use('node', 'cookie', 'event-resize', 'event', 'jsonp', 'json-parse', func
 
   core.setupAccordion();
   core.sectionTabs();
-  core.tabbedContent();
   core.resizeListener();
 });
 
