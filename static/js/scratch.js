@@ -168,7 +168,6 @@ YUI().use('node', 'cookie', 'event-resize', 'event', 'jsonp', 'json-parse', func
     } else if (document.documentElement.clientWidth >= 768) {
       core.globalPrepend = 'body';
       core.extendGlobalNav();
-      Y.all('#additional-info h2').setStyle('cursor', 'default');
     }
   };
 
@@ -188,7 +187,6 @@ YUI().use('node', 'cookie', 'event-resize', 'event', 'jsonp', 'json-parse', func
       if (globalNav) {
         globalNav.remove();
         core.extendGlobalNav();
-        Y.all('#additional-info h2').setStyle('cursor', 'default');
       }
     }
   };
