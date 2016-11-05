@@ -90,14 +90,6 @@ YUI().use('node', 'cookie', 'event-resize', 'event', 'jsonp', 'json-parse', func
     }
   };
 
-  core.svgFallback = function() {
-    if (!Modernizr.svg || !Modernizr.backgroundsize) {
-      Y.all("img[src$='.svg']").each(function(node) {
-        node.setAttribute("src", node.getAttribute('src').toString().match(/.*\/(.+?)\./)[0]+'png');
-      });
-    }
-  };
-
   core.renderJSON = function (response, id) {
     if (id == undefined) {
         id = '#dynamic-logos';
@@ -220,7 +212,6 @@ YUI().use('node', 'cookie', 'event-resize', 'event', 'jsonp', 'json-parse', func
   core.setupHtmlClass();
   core.sectionTabs();
   core.tabbedContent();
-  core.svgFallback();
   core.resizeListener();
 });
 
