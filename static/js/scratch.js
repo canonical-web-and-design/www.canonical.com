@@ -85,32 +85,6 @@ YUI().use('node', 'cookie', 'event-resize', 'event', 'jsonp', 'json-parse', func
     }
   };
 
-  core.renderJSON = function (response, id) {
-    if (id == undefined) {
-        id = '#dynamic-logos';
-    }
-    var JSON = response;
-    var numberPartners = JSON.length;
-    var numberToDisplay = numberPartners < 10 ? numberPartners : 10;
-
-    for (var i = 0; i < numberToDisplay; i++) {
-      Y.one(id).append(Y.Node.create('<li><img onload="this.style.opacity=\'1\';" src="'+JSON[i].logo+'" alt="'+JSON[i].name+'"></li>'));
-    }
-  };
-
-  core.loadPartners = function (params, elementID, feedName) {
-    if (typeof feedName === 'undefined') {
-      feedName = 'partners';
-    }
-
-    var partnersAPI = "http://partners.ubuntu.com/" + feedName + ".json";
-    var url = partnersAPI + params + "&callback={callback}";
-    var callback = function(response) {
-        return core.renderJSON(response, elementID);
-    }
-    Y.jsonp(url, callback);
-  };
-
   core.sectionTabs = function () {
     if (Y.one('.tabbed-content')) {
       var p = Y.one('.tabbed-menu a.active'),

@@ -36,7 +36,12 @@
 	<div class="inner-wrapper">
 		<div class="panel panel--alt twelve-col">
 			<h2 class="muted-heading">A selection of our cloud partners</h2>
-			<ul class="inline-logos no-bullets clear list-auto" id="cloud-logos"></ul>
+			{% get_json_feed "http://partners.ubuntu.com/partners.json?technology__name=Cloud/server&featured=true" limit=10 as cloud_partners %}
+			<ul class="inline-logos no-bullets clear list-auto" id="cloud-logos">
+				{% for partner in cloud_partners %}
+				<li><img onload="this.style.opacity='1';" src="{{ partner.logo }}" alt="{{ partner.name }}"></li>
+				{% endfor %}
+			</ul>
 			<p class="align-center"><a href="http://partners.ubuntu.com/find-a-partner?technology=cloud/server" class="external">Browse all cloud partners</a></p>
 		</div>
 	</div>
@@ -67,7 +72,12 @@
 	<div class="inner-wrapper">
 		<div class="panel panel--alt twelve-col">
 			<h2 class="muted-heading">A selection of our client partners</h2>
-			<ul class="inline-logos no-bullets clear list-auto" id="client-logos"></ul>
+			{% get_json_feed "http://partners.ubuntu.com/partners.json?programme__name=Technical Partner Programme" limit=10 as client_partners %}
+			<ul class="inline-logos no-bullets clear list-auto" id="client-logos">
+				{% for partner in client_partners %}
+				<li><img onload="this.style.opacity='1';" src="{{ partner.logo }}" alt="{{ partner.name }}"></li>
+				{% endfor %}
+			</ul>
 			<p class="align-center"><a href="http://partners.ubuntu.com/find-a-partner?technology=personal-computing/devices" class="external align-center">Browse all client partners</a></p>
 		</div>
 	</div>
@@ -127,16 +137,3 @@
 	</div>
 </div>
 {% endblock content %}
-
-{% block footer_extra %}
-
-<script>
-	YUI().use('event-base', function (Y) {
-		Y.on('domready', function () {
-			core.loadPartners('?technology__name=Cloud/server&featured=true', '#cloud-logos');
-			core.loadPartners('?programme__name=Technical Partner Programme', '#client-logos');
-		});
-	});
-</script>
-
-{% endblock %}
