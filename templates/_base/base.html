@@ -27,7 +27,7 @@
 
 <!-- google fonts -->
 <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,700,700italic|Ubuntu+Mono' rel='stylesheet' type='text/css' />
-<link rel="stylesheet" type="text/css" media="screen" href="{{ ASSET_SERVER_URL }}5ff660b1-global-responsive.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="{{ ASSET_SERVER_URL }}a722db6e-global.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}css/styles.css" />
 <link rel="stylesheet" type="text/css" media="print" href="{{ STATIC_URL }}css/core-print.css" />
 
@@ -111,11 +111,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
 
 <!--[if gte IE 9]><!-->
-<script src="{{ ASSET_SERVER_URL }}94052790-global.js"></script>
+<script src="{{ ASSET_SERVER_URL }}5b54324c-global.js"></script>
 <script src="{{ STATIC_URL }}js/scratch.js"></script>
 <script src="{{ STATIC_URL }}js/polyfills.js"></script>
 <script src="{{ STATIC_URL }}js/utilities.js"></script>
 <script src="{{ STATIC_URL }}js/core.js"></script>
+
+<script>
+  // Setup global nav
+  var globalNav = document.querySelector('#nav-global');
+  core.setupGlobalNav(globalNav);
+  core.positionGlobalNav(globalNav);
+  window.addEventListener('resize', function() {core.positionGlobalNav(globalNav);});
+
+  // Setup toggle menus
+  document.querySelectorAll('.toggle-menu__button').forEach(core.toggleSibling);
+</script>
 <!--<![endif]-->
 
 <script>

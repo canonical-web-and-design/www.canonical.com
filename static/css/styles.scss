@@ -1420,3 +1420,9 @@ html.no-svg {
       }
     }
 }
+
+@media (min-width: 768px) {
+  .global__header {
+    display: none;
+  }
+}
