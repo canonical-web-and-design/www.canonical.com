@@ -82,8 +82,12 @@
                     <p>There are few organisations in the world where interface designers, graphic designers and user experience professionals come together on such a fascinating array of projects. From our office in London, this team creates the look, feel and interaction models for technologies as diverse as the Juju service orchestration tool and the Ubuntu Touch mobile interface. </p>
                 </div>
                 <div class="four-col last-col">
-                    <h4>Latest vacancies &mdash; <a href="/careers/all-design-and-user-experience-vacancies">View all&nbsp;&rsaquo;</a></h4>
-                    <ul class="vacancies" id="design-job-feed"></ul>
+                  <h4>Latest vacancies &mdash; <a href="/careers/all-design-and-user-experience-vacancies">View all&nbsp;&rsaquo;</a></h4>
+
+                  <ul class="vacancies" id="design-job-feed">
+                    {% get_rss_feed "https://ch.tbe.taleo.net/CH03/ats/servlet/Rss?org=CANONICAL&cws=1&WebPage=SRCHR&WebVersion=0&_rss_version=2&CUSTOM_755=610" as design_vacancies %}
+                    {% include "_includes/vacancies.html" with vacancies=design_vacancies job_type="design" limit="5" %}
+                  </ul>
                 </div>
             </div>
             <div class="nine-col profile" itemscope itemtype="http://schema.org/Person">
@@ -113,7 +117,11 @@
                 </div>
                 <div class="four-col last-col no-margin-bottom">
                     <h4>Latest vacancies &mdash;<a href="/careers/all-technical-and-engineering-vacancies">View all&nbsp;&rsaquo;</a></h4>
-                    <ul class="vacancies" id="technical-job-feed"></ul>
+
+                    <ul class="vacancies" id="technical-job-feed">
+                      {% get_rss_feed "https://ch.tbe.taleo.net/CH03/ats/servlet/Rss?org=CANONICAL&cws=1&WebPage=SRCHR&WebVersion=0&_rss_version=2&CUSTOM_755=617" as technical_vacancies %}
+                      {% include "_includes/vacancies.html" with vacancies=technical_vacancies job_type="technical and engineering" limit="5" %}
+                    </ul>
                 </div>
             </div>
             <div class="nine-col profile" itemscope itemtype="http://schema.org/Person">
@@ -143,7 +151,11 @@
                 </div>
                 <div class="four-col last-col">
                     <h4>Latest vacancies &mdash; <a href="/careers/all-marketing-and-business-development-vacancies">View all&nbsp;&rsaquo;</a></h4>
-                    <ul class="vacancies" id="marketing-job-feed"></ul>
+
+                    <ul class="vacancies" id="marketing-job-feed">
+                      {% get_rss_feed "https://ch.tbe.taleo.net/CH03/ats/servlet/Rss?org=CANONICAL&cws=1&WebPage=SRCHR&WebVersion=0&_rss_version=2&CUSTOM_755=11588%2C6158%2C616" as marketing_vacancies %}
+                      {% include "_includes/vacancies.html" with vacancies=marketing_vacancies job_type="marketing and business development" limit="5" %}
+                    </ul>
                 </div>
             </div>
             <div class="nine-col profile" itemscope itemtype="http://schema.org/Person">
@@ -173,7 +185,11 @@
                 </div>
                 <div class="four-col last-col">
                     <h4>Latest vacancies &mdash; <a href="/careers/all-operations-vacancies">View all&nbsp;&rsaquo;</a></h4>
-                    <ul class="vacancies" id="operations-job-feed"></ul>
+
+                    <ul class="vacancies" id="operations-job-feed">
+                      {% get_rss_feed "https://ch.tbe.taleo.net/CH03/ats/servlet/Rss?org=CANONICAL&cws=1&WebPage=SRCHR&WebVersion=0&_rss_version=2&CUSTOM_755=615%2C613%2C614" as operations_vacancies %}
+                      {% include "_includes/vacancies.html" with vacancies=operations_vacancies job_type="operations" limit="5" %}
+                    </ul>
                 </div>
             </div>
             <div class="nine-col profile" itemscope itemtype="http://schema.org/Person">
@@ -203,7 +219,11 @@
                 </div>
                 <div class="four-col last-col">
                     <h4>Latest vacancies &mdash; <a href="/careers/all-professional-services-vacancies">View all&nbsp;&rsaquo;</a></h4>
-                    <ul class="vacancies" id="professional-job-feed"></ul>
+
+                    <ul class="vacancies" id="professional-job-feed">
+                      {% get_rss_feed "https://ch.tbe.taleo.net/CH03/ats/servlet/Rss?org=CANONICAL&cws=1&WebPage=SRCHR&WebVersion=0&_rss_version=2&keywords=professional" as professional_vacancies %}
+                      {% include "_includes/vacancies.html" with vacancies=professional_vacancies job_type="professional services" limit="5" %}
+                    </ul>
                 </div>
             </div>
             <div class="nine-col profile" itemscope itemtype="http://schema.org/Person">
@@ -249,15 +269,3 @@
 </div><!-- /.row -->
 
 {% endblock content %}
-
-{% block footer_extra %}
-<script type="text/javascript">
-  YUI().use(function(Y) {
-    core.rssLoader("http://www.stmgrts.org.uk/taleo/taleo_design-job-feed.xml", "design", "#design-job-feed");
-    core.rssLoader("http://www.stmgrts.org.uk/taleo/taleo_technical-job-feed.xml",  "technical and engineering", "#technical-job-feed");
-    core.rssLoader("http://www.stmgrts.org.uk/taleo/taleo_marketing-job-feed.xml", "marketing and business development", "#marketing-job-feed");
-    core.rssLoader("http://www.stmgrts.org.uk/taleo/taleo_operations-job-feed.xml", "operations", "#operations-job-feed");
-    core.rssLoader("http://www.stmgrts.org.uk/taleo/taleo_professional-job-feed.xml", "professional services", "#professional-job-feed");
-    });
-</script>
-{% endblock %}
