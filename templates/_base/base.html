@@ -111,7 +111,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script src="{{ STATIC_URL }}js/polyfills.js"></script>
 <script src="{{ STATIC_URL }}js/utilities.js"></script>
 <script src="{{ STATIC_URL }}js/core.js"></script>
-<script src="{{ STATIC_URL }}js/scratch.js"></script>
 
 <script>
   // Setup global nav
@@ -122,13 +121,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   // Setup toggle menus
   document.querySelectorAll('.toggle-menu__button').forEach(core.toggleSibling);
-</script>
-<!--<![endif]-->
 
-<script>
   // Every page should show the cookie policy until accepted
   core.cookiePolicy();
 </script>
+<!--<![endif]-->
 
 {% block footer_extra %}{% endblock %}
 </body>
