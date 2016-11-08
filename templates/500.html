@@ -202,14 +202,27 @@
 </script>
 
 <!--[if gte IE 9]><!-->
-<script src="{{ ASSET_SERVER_URL }}94052790-global.js"></script>
-<script src="/static/js/scratch.js"></script>
+<script src="{{ ASSET_SERVER_URL }}5b54324c-global.js"></script>
+<script src="{{ STATIC_URL }}js/polyfills.js"></script>
+<script src="{{ STATIC_URL }}js/utilities.js"></script>
+<script src="{{ STATIC_URL }}js/core.js"></script>
+
+<script>
+  // Setup global nav
+  var globalNav = document.querySelector('#nav-global');
+  core.setupGlobalNav(globalNav);
+  core.positionGlobalNav(globalNav);
+  window.addEventListener('resize', function() {core.positionGlobalNav(globalNav);});
+
+  // Setup toggle menus
+  document.querySelectorAll('.toggle-menu__button').forEach(core.toggleSibling);
+
+  // Every page should show the cookie policy until accepted
+  core.cookiePolicy();
+</script>
 <!--<![endif]-->
 
-
-
 <script type="text/javascript">
-
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-1018242-5']);
   _gaq.push(['_trackPageview']);
@@ -219,7 +232,6 @@
     ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
-
 </script>
 
 
