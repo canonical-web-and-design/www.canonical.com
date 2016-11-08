@@ -52,7 +52,7 @@
 
   Notes:
   -----------------------------------------------------------------
-  Using '.yui3-js-enabled' for CSS with JS enabled as it's there for free atm, be nice to have just js-enabled as a class.
+  Using '.js' for CSS with JS enabled as it's there for free atm, be nice to have just js-enabled as a class.
 
 -----------------------------------------------------------------
 -------------------------------------------------------------- */
@@ -502,7 +502,7 @@ html.no-js #spinner {
 
 /* @section Tabbed menu in accordion mode
 -------------------------------------------------------------- */
-html.yui3-js-enabled {
+html.js {
   .tabbed-menu {
     display: none;
   }
@@ -551,8 +551,8 @@ html.yui3-js-enabled {
       }
   }
 
-  html.yui3-js-enabled.opera-mini .tabbed-content,
-  html.yui3-js-enabled.no-svg .tabbed-content {
+  html.js.opera-mini .tabbed-content,
+  html.js.no-svg .tabbed-content {
     .accordion-button {
       background-image: url(https://assets.ubuntu.com/v1/f1cbbaa2-icon-arrow-right.svg)
     }
@@ -632,7 +632,7 @@ html.yui3-js-enabled {
   }
 }
 
-html.yui3-js-enabled.opera-mini {
+html.js.opera-mini {
   .tabbed-content {
     .accordion-button {
         background-image: none;
