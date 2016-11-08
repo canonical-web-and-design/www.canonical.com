@@ -528,25 +528,24 @@ html.js {
 
       div {
         display: none;
+
+        &.active, &.active div {
+          display: block;
+        }
       }
 
       .accordion-button {
-      display: block;
-      width: 100%;
-      height: 30px;
-      font-size: 16px;
+        display: block;
+        width: 100%;
+        height: 30px;
+        font-size: 16px;
         color: $cool_grey;
         padding-top: 2px;
         background: url(https://assets.ubuntu.com/v1/f6fa8249-icon-arrow-down.svg) no-repeat scroll right 3px $light_grey;
-    }
 
-      &.open {
-        .accordion-button {
+        &.active {
           background-image: url(https://assets.ubuntu.com/v1/c65b8106-icon-arrow-up.svg);
           margin-bottom: 10px;
-        }
-        div {
-          display: block;
         }
       }
   }
