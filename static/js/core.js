@@ -1,12 +1,10 @@
 /* Setup namespace
- * TODO: Uncomment this once all core.* items have been removed from scratch.js
  */
+if (typeof core !== 'undefined') {
+  throw TypeError("Namespace 'core' not available");
+}
 
-// if (typeof core !== 'undefined') {
-//   throw TypeError("Namespace 'core' not available");
-// }
-
-// var core = {};
+var core = {};
 
 
 /**
@@ -96,4 +94,47 @@ core.setupAccordion = function(container) {
       };
     }(toggleTarget)
   );
+};
+
+/**
+ * Add the approproate classes and header to the global nav
+ */
+core.setupGlobalNav = function(navElement) {
+  navElement.classList.add('toggle-menu');
+  navElement.querySelector('.nav-global-wrapper').classList.add('toggle-menu__content');
+
+  header = utilities.createElementFromHtml('<h2 class="toggle-menu__button global__header">Ubuntu websites</h2>');
+
+  navElement.insertBefore(header, navElement.querySelector('.nav-global-wrapper'));
+};
+
+
+/**
+ * Position the global nav in either the header or the footer
+ * depending on window size
+ */
+core.positionGlobalNav = function(navElement) {
+  if (document.documentElement.clientWidth < 768) {
+    document.querySelector('.global-footer-wrapper').appendChild(navElement);
+  } else {
+    document.body.insertBefore(navElement, document.body.firstChild);
+  }
+};
+
+
+/**
+ * Make the given element clickable, and on click add the 'active' class to it
+ * and the element following it.
+ */
+core.toggleSibling = function(toggleElement) {
+  toggleElement.addEventListener(
+    'click',
+    function(toggleElement) {
+      return function(clickEvent) {
+        toggleElement.classList.toggle('active');
+        toggleElement.nextElementSibling.classList.toggle('active');
+      };
+    }(toggleElement)
+  );
+  toggleElement.style.cursor = 'pointer';
 };
