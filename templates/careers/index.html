@@ -75,167 +75,182 @@
             <img src="http://www.ubuntu.com/static/u/img/patterns/tabbed-nav-arrow.png" class="arrow" height="6" width="12" alt="" />
         </div>
         <div id="design-and-user-experience" class="tabbed-content panel nine-col last-col">
-            <h3 class="title">Design and User Experience</h3>
-            <div class="nine-col vertical-divider no-margin-bottom">
-                <div class="five-col">
-                    <p>There are few organisations in the world where interface designers, graphic designers and user experience professionals come together on such a fascinating array of projects. From our office in London, this team creates the look, feel and interaction models for technologies as diverse as the Juju service orchestration tool and the Ubuntu Touch mobile interface. </p>
-                </div>
-                <div class="four-col last-col">
-                  <h4>Latest vacancies &mdash; <a href="/careers/all-design-and-user-experience-vacancies">View all&nbsp;&rsaquo;</a></h4>
+            <a class="accordion-button slideless" href="#design-and-user-experience">Design and User Experience</a>
+            <div>
+                <div class="nine-col vertical-divider no-margin-bottom">
+                    <h3 class="title">Design and User Experience</h3>
+                    <div class="five-col">
+                        <p>There are few organisations in the world where interface designers, graphic designers and user experience professionals come together on such a fascinating array of projects. From our office in London, this team creates the look, feel and interaction models for technologies as diverse as the Juju service orchestration tool and the Ubuntu Touch mobile interface. </p>
+                    </div>
+                    <div class="four-col last-col">
+                      <h4>Latest vacancies &mdash; <a href="/careers/all-design-and-user-experience-vacancies">View all&nbsp;&rsaquo;</a></h4>
 
-                  <ul class="vacancies" id="design-job-feed">
-                    {% get_rss_feed "https://ch.tbe.taleo.net/CH03/ats/servlet/Rss?org=CANONICAL&cws=1&WebPage=SRCHR&WebVersion=0&_rss_version=2&CUSTOM_755=610" as design_vacancies %}
-                    {% include "_includes/vacancies.html" with vacancies=design_vacancies job_type="design" limit="5" %}
-                  </ul>
+                      <ul class="vacancies" id="design-job-feed">
+                        {% get_rss_feed "https://ch.tbe.taleo.net/CH03/ats/servlet/Rss?org=CANONICAL&cws=1&WebPage=SRCHR&WebVersion=0&_rss_version=2&CUSTOM_755=610" as design_vacancies %}
+                        {% include "_includes/vacancies.html" with vacancies=design_vacancies job_type="design" limit="5" %}
+                      </ul>
+                    </div>
                 </div>
-            </div>
-            <div class="nine-col profile" itemscope itemtype="http://schema.org/Person">
-                <div class="three-col">
-                    <img class="portrait" itemprop="image" src="{{ ASSET_SERVER_URL }}acbdf79d-portrait-rosie.png" alt="">
-                    <ul class="personal-info">
-                        <li class="name" itemprop="name">Xi Zhu</li>
-                        <li class="role" itemprop="jobTitle">Visual Designer</li>
-                        <li class="location">London</li>
-                    </ul>
-                </div>
-                <div class="six-col last-col no-margin-bottom">
-                    <blockquote class="pull-quote">
-                        <p><span>&ldquo;</span>I enjoy the sprints because it gives me a chance to work closely with people from all around the world<span>&rdquo;</span></p>
-                    </blockquote>
-                    <p class="question">What is your greatest accomplishment at&nbsp;Canonical?</p>
-                    <p>Working on the UI toolkits for the phone operating system. It&rsquo;s nice to see app developers use the components to make their apps work on Ubuntu, and I think the widgets look beautiful as well.</p>
+                <div class="nine-col profile" itemscope itemtype="http://schema.org/Person">
+                    <div class="three-col">
+                        <img class="portrait" itemprop="image" src="{{ ASSET_SERVER_URL }}acbdf79d-portrait-rosie.png" alt="">
+                        <ul class="personal-info">
+                            <li class="name" itemprop="name">Xi Zhu</li>
+                            <li class="role" itemprop="jobTitle">Visual Designer</li>
+                            <li class="location">London</li>
+                        </ul>
+                    </div>
+                    <div class="six-col last-col no-margin-bottom">
+                        <blockquote class="pull-quote">
+                            <p><span>&ldquo;</span>I enjoy the sprints because it gives me a chance to work closely with people from all around the world<span>&rdquo;</span></p>
+                        </blockquote>
+                        <p class="question">What is your greatest accomplishment at&nbsp;Canonical?</p>
+                        <p>Working on the UI toolkits for the phone operating system. It&rsquo;s nice to see app developers use the components to make their apps work on Ubuntu, and I think the widgets look beautiful as well.</p>
+                    </div>
                 </div>
             </div>
         </div>
         <div id="technical-and-engineering" class="tabbed-content panel nine-col last-col hide">
+            <a class="accordion-button slideless" href="#technical-and-engineering">Technical and Engineering</a>
             <h3 class="title">Technical and Engineering</h3>
-            <div class="nine-col vertical-divider no-margin-bottom">
-                <div class="five-col">
-                    <p>Canonical is an engineering company. We need serious technologists to develop and maintain Ubuntu and importantly, its cloud and hyperscale features. If you want to work  alongside renowned software developers and take personal responsibility for high-profile projects like Juju and Mir, you won&rsquo;t find anywhere more exciting to work than Canonical.</p>
-                </div>
-                <div class="four-col last-col no-margin-bottom">
-                    <h4>Latest vacancies &mdash;<a href="/careers/all-technical-and-engineering-vacancies">View all&nbsp;&rsaquo;</a></h4>
+            <div>
+                <div class="nine-col vertical-divider no-margin-bottom">
+                    <div class="five-col">
+                        <p>Canonical is an engineering company. We need serious technologists to develop and maintain Ubuntu and importantly, its cloud and hyperscale features. If you want to work  alongside renowned software developers and take personal responsibility for high-profile projects like Juju and Mir, you won&rsquo;t find anywhere more exciting to work than Canonical.</p>
+                    </div>
+                    <div class="four-col last-col no-margin-bottom">
+                        <h4>Latest vacancies &mdash;<a href="/careers/all-technical-and-engineering-vacancies">View all&nbsp;&rsaquo;</a></h4>
 
-                    <ul class="vacancies" id="technical-job-feed">
-                      {% get_rss_feed "https://ch.tbe.taleo.net/CH03/ats/servlet/Rss?org=CANONICAL&cws=1&WebPage=SRCHR&WebVersion=0&_rss_version=2&CUSTOM_755=617" as technical_vacancies %}
-                      {% include "_includes/vacancies.html" with vacancies=technical_vacancies job_type="technical and engineering" limit="5" %}
-                    </ul>
+                        <ul class="vacancies" id="technical-job-feed">
+                          {% get_rss_feed "https://ch.tbe.taleo.net/CH03/ats/servlet/Rss?org=CANONICAL&cws=1&WebPage=SRCHR&WebVersion=0&_rss_version=2&CUSTOM_755=617" as technical_vacancies %}
+                          {% include "_includes/vacancies.html" with vacancies=technical_vacancies job_type="technical and engineering" limit="5" %}
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div class="nine-col profile" itemscope itemtype="http://schema.org/Person">
-                <div class="three-col">
-                    <img class="portrait" itemprop="image" src="{{ ASSET_SERVER_URL }}72181143-portrait-diogo.png" alt="">
-                    <ul class="personal-info">
-                        <li class="name" itemprop="name">Diogo</li>
-                        <li class="role" itemprop="jobTitle">Software Engineer</li>
-                        <li class="location">Brazil</li>
-                    </ul>
-                </div>
-                <div class="six-col last-col">
-                    <blockquote class="pull-quote">
-                        <p><span>&ldquo;</span>The best thing about Canonical, for me, is the common understanding that develops, both within teams and between them.<span>&rdquo;</span></p>
-                    </blockquote>
-                    <p class="question">What is your greatest accomplishment at&nbsp;Canonical?</p>
-                    <p>I think one of my greatest accomplishments was being able to bring down the issue tracker queue of one of Ubuntu One&rsquo;s components to zero, which doesn&rsquo;t mean that it was bug-free, but very close to that.</p>
+                <div class="nine-col profile" itemscope itemtype="http://schema.org/Person">
+                    <div class="three-col">
+                        <img class="portrait" itemprop="image" src="{{ ASSET_SERVER_URL }}72181143-portrait-diogo.png" alt="">
+                        <ul class="personal-info">
+                            <li class="name" itemprop="name">Diogo</li>
+                            <li class="role" itemprop="jobTitle">Software Engineer</li>
+                            <li class="location">Brazil</li>
+                        </ul>
+                    </div>
+                    <div class="six-col last-col">
+                        <blockquote class="pull-quote">
+                            <p><span>&ldquo;</span>The best thing about Canonical, for me, is the common understanding that develops, both within teams and between them.<span>&rdquo;</span></p>
+                        </blockquote>
+                        <p class="question">What is your greatest accomplishment at&nbsp;Canonical?</p>
+                        <p>I think one of my greatest accomplishments was being able to bring down the issue tracker queue of one of Ubuntu One&rsquo;s components to zero, which doesn&rsquo;t mean that it was bug-free, but very close to that.</p>
+                    </div>
                 </div>
             </div>
         </div>
         <div id="marketing-services" class="tabbed-content panel nine-col last-col hide">
+            <a class="accordion-button slideless" href="#marketing-services">Marketing and Business</a>
             <h3 class="title">Marketing and Business Development</h3>
-            <div class="nine-col vertical-divider no-margin-bottom">
-                <div class="five-col">
-                    <p>We employ highly skilled business and marketing professionals with technology experience and an entrepreneurial spirit. If you have a background in startups, an interest in engineering or cloud computing and a desire to explore new markets, Canonical could be for you. </p>
-                </div>
-                <div class="four-col last-col">
-                    <h4>Latest vacancies &mdash; <a href="/careers/all-marketing-and-business-development-vacancies">View all&nbsp;&rsaquo;</a></h4>
+            <div>
+                <div class="nine-col vertical-divider no-margin-bottom">
+                    <div class="five-col">
+                        <p>We employ highly skilled business and marketing professionals with technology experience and an entrepreneurial spirit. If you have a background in startups, an interest in engineering or cloud computing and a desire to explore new markets, Canonical could be for you. </p>
+                    </div>
+                    <div class="four-col last-col">
+                        <h4>Latest vacancies &mdash; <a href="/careers/all-marketing-and-business-development-vacancies">View all&nbsp;&rsaquo;</a></h4>
 
-                    <ul class="vacancies" id="marketing-job-feed">
-                      {% get_rss_feed "https://ch.tbe.taleo.net/CH03/ats/servlet/Rss?org=CANONICAL&cws=1&WebPage=SRCHR&WebVersion=0&_rss_version=2&CUSTOM_755=11588%2C6158%2C616" as marketing_vacancies %}
-                      {% include "_includes/vacancies.html" with vacancies=marketing_vacancies job_type="marketing and business development" limit="5" %}
-                    </ul>
+                        <ul class="vacancies" id="marketing-job-feed">
+                          {% get_rss_feed "https://ch.tbe.taleo.net/CH03/ats/servlet/Rss?org=CANONICAL&cws=1&WebPage=SRCHR&WebVersion=0&_rss_version=2&CUSTOM_755=11588%2C6158%2C616" as marketing_vacancies %}
+                          {% include "_includes/vacancies.html" with vacancies=marketing_vacancies job_type="marketing and business development" limit="5" %}
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div class="nine-col profile" itemscope itemtype="http://schema.org/Person">
-                <div class="three-col">
-                    <img class="portrait" itemprop="image" src="{{ ASSET_SERVER_URL }}bb4eeb76-portrait-james.png" alt="">
-                    <ul class="personal-info">
-                        <li class="name" itemprop="name">James</li>
-                        <li class="role" itemprop="jobTitle">Inside Sales Executive</li>
-                        <li class="location">Lexington, USA</li>
-                    </ul>
-                </div>
-                <div class="six-col last-col no-margin-bottom">
-                    <blockquote class="pull-quote">
-                        <p><span>&ldquo;</span>I enjoy the &lsquo;start-up&rsquo; feel of the company, good ideas are welcomed and taken on board<span>&rdquo;</span></p>
-                    </blockquote>
-                    <p class="question">What is your greatest accomplishment at&nbsp;Canonical?</p>
-                    <p>My colleague and I were selected to drive a new part of the business, notably finding and selling into global open cloud opportunities. Since starting the project 4 months ago, we have secured &dollar;2.5 M of projected business and generated high level meetings in some of the most prestigious enterprise companies in the world. Senior technology executives are very keen to speak with us, which is great for my team.</p>
+                <div class="nine-col profile" itemscope itemtype="http://schema.org/Person">
+                    <div class="three-col">
+                        <img class="portrait" itemprop="image" src="{{ ASSET_SERVER_URL }}bb4eeb76-portrait-james.png" alt="">
+                        <ul class="personal-info">
+                            <li class="name" itemprop="name">James</li>
+                            <li class="role" itemprop="jobTitle">Inside Sales Executive</li>
+                            <li class="location">Lexington, USA</li>
+                        </ul>
+                    </div>
+                    <div class="six-col last-col no-margin-bottom">
+                        <blockquote class="pull-quote">
+                            <p><span>&ldquo;</span>I enjoy the &lsquo;start-up&rsquo; feel of the company, good ideas are welcomed and taken on board<span>&rdquo;</span></p>
+                        </blockquote>
+                        <p class="question">What is your greatest accomplishment at&nbsp;Canonical?</p>
+                        <p>My colleague and I were selected to drive a new part of the business, notably finding and selling into global open cloud opportunities. Since starting the project 4 months ago, we have secured &dollar;2.5 M of projected business and generated high level meetings in some of the most prestigious enterprise companies in the world. Senior technology executives are very keen to speak with us, which is great for my team.</p>
+                    </div>
                 </div>
             </div>
         </div>
         <div id="operations" class="tabbed-content panel nine-col last-col hide">
+            <a class="accordion-button slideless" href="#operations">Operations</a>
             <h3 class="title">Operations</h3>
-            <div class="nine-col vertical-divider no-margin-bottom">
-                <div class="five-col">
-                    <p>Canonical is a global company with over 500 staff and, thanks to our entrepreneurial culture, we are expanding fast. In our operations team, you can expect a diverse, hands-on, international role, with the opportunity to take on complex challenges. </p>
-                </div>
-                <div class="four-col last-col">
-                    <h4>Latest vacancies &mdash; <a href="/careers/all-operations-vacancies">View all&nbsp;&rsaquo;</a></h4>
+            <div>
+                <div class="nine-col vertical-divider no-margin-bottom">
+                    <div class="five-col">
+                        <p>Canonical is a global company with over 500 staff and, thanks to our entrepreneurial culture, we are expanding fast. In our operations team, you can expect a diverse, hands-on, international role, with the opportunity to take on complex challenges. </p>
+                    </div>
+                    <div class="four-col last-col">
+                        <h4>Latest vacancies &mdash; <a href="/careers/all-operations-vacancies">View all&nbsp;&rsaquo;</a></h4>
 
-                    <ul class="vacancies" id="operations-job-feed">
-                      {% get_rss_feed "https://ch.tbe.taleo.net/CH03/ats/servlet/Rss?org=CANONICAL&cws=1&WebPage=SRCHR&WebVersion=0&_rss_version=2&CUSTOM_755=615%2C613%2C614" as operations_vacancies %}
-                      {% include "_includes/vacancies.html" with vacancies=operations_vacancies job_type="operations" limit="5" %}
-                    </ul>
+                        <ul class="vacancies" id="operations-job-feed">
+                          {% get_rss_feed "https://ch.tbe.taleo.net/CH03/ats/servlet/Rss?org=CANONICAL&cws=1&WebPage=SRCHR&WebVersion=0&_rss_version=2&CUSTOM_755=615%2C613%2C614" as operations_vacancies %}
+                          {% include "_includes/vacancies.html" with vacancies=operations_vacancies job_type="operations" limit="5" %}
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div class="nine-col profile" itemscope itemtype="http://schema.org/Person">
-                <div class="three-col">
-                    <img class="portrait" itemprop="image" src="{{ ASSET_SERVER_URL }}48cfcd60-portrait-michelle.png" alt="">
-                    <ul class="personal-info">
-                        <li class="name" itemprop="name">Michelle</li>
-                        <li class="role" itemprop="jobTitle">Executive Assistant</li>
-                        <li class="location">London, UK</li>
-                    </ul>
-                </div>
-                <div class="six-col last-col no-margin-bottom">
-                    <blockquote class="pull-quote">
-                        <p><span>&ldquo;</span>The people, the variety of work and interesting projects are what I enjoy most about working here<span>&rdquo;</span></p>
-                    </blockquote>
-                    <p class="question">What is your greatest accomplishment at&nbsp;Canonical?</p>
-                    <p>Working on and implementing the Travel Authorisation process. It was good to head up a project from concept to implementation and have it roll out company wide. Seeing the results of the project, in that we have data we can actually use, has been very rewarding.</p>
+                <div class="nine-col profile" itemscope itemtype="http://schema.org/Person">
+                    <div class="three-col">
+                        <img class="portrait" itemprop="image" src="{{ ASSET_SERVER_URL }}48cfcd60-portrait-michelle.png" alt="">
+                        <ul class="personal-info">
+                            <li class="name" itemprop="name">Michelle</li>
+                            <li class="role" itemprop="jobTitle">Executive Assistant</li>
+                            <li class="location">London, UK</li>
+                        </ul>
+                    </div>
+                    <div class="six-col last-col no-margin-bottom">
+                        <blockquote class="pull-quote">
+                            <p><span>&ldquo;</span>The people, the variety of work and interesting projects are what I enjoy most about working here<span>&rdquo;</span></p>
+                        </blockquote>
+                        <p class="question">What is your greatest accomplishment at&nbsp;Canonical?</p>
+                        <p>Working on and implementing the Travel Authorisation process. It was good to head up a project from concept to implementation and have it roll out company wide. Seeing the results of the project, in that we have data we can actually use, has been very rewarding.</p>
+                    </div>
                 </div>
             </div>
         </div>
         <div id="professional-services" class="tabbed-content panel nine-col last-col hide">
+            <a class="accordion-button slideless" href="#professional-services">Professional Services</a>
             <h3 class="title">Professional Services</h3>
-            <div class="nine-col vertical-divider no-margin-bottom">
-                <div class="five-col">
-                    <p>Collaborate with leading manufacturers all over the world, as you work to optimise Ubuntu for new hardware platforms including the ARM-based hyperscale servers being developed by HP for the Moonshot project. Expect a varied, client-facing role, with the opportunity to work remotely.</p>
-                </div>
-                <div class="four-col last-col">
-                    <h4>Latest vacancies &mdash; <a href="/careers/all-professional-services-vacancies">View all&nbsp;&rsaquo;</a></h4>
+            <div>
+                <div class="nine-col vertical-divider no-margin-bottom">
+                    <div class="five-col">
+                        <p>Collaborate with leading manufacturers all over the world, as you work to optimise Ubuntu for new hardware platforms including the ARM-based hyperscale servers being developed by HP for the Moonshot project. Expect a varied, client-facing role, with the opportunity to work remotely.</p>
+                    </div>
+                    <div class="four-col last-col">
+                        <h4>Latest vacancies &mdash; <a href="/careers/all-professional-services-vacancies">View all&nbsp;&rsaquo;</a></h4>
 
-                    <ul class="vacancies" id="professional-job-feed">
-                      {% get_rss_feed "https://ch.tbe.taleo.net/CH03/ats/servlet/Rss?org=CANONICAL&cws=1&WebPage=SRCHR&WebVersion=0&_rss_version=2&keywords=professional" as professional_vacancies %}
-                      {% include "_includes/vacancies.html" with vacancies=professional_vacancies job_type="professional services" limit="5" %}
-                    </ul>
+                        <ul class="vacancies" id="professional-job-feed">
+                          {% get_rss_feed "https://ch.tbe.taleo.net/CH03/ats/servlet/Rss?org=CANONICAL&cws=1&WebPage=SRCHR&WebVersion=0&_rss_version=2&keywords=professional" as professional_vacancies %}
+                          {% include "_includes/vacancies.html" with vacancies=professional_vacancies job_type="professional services" limit="5" %}
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div class="nine-col profile" itemscope itemtype="http://schema.org/Person">
-                <div class="three-col">
-                    <img class="portrait" itemprop="image" src="{{ ASSET_SERVER_URL }}bbd0a973-portrait-ramon.png" alt="">
-                    <ul class="personal-info">
-                        <li class="name" itemprop="name">Ramon</li>
-                        <li class="role" itemprop="jobTitle">Cloud Architect</li>
-                        <li class="location">London, UK</li>
-                    </ul>
-                </div>
-                <div class="six-col last-col no-margin-bottom">
-                    <blockquote class="pull-quote">
-                        <p><span>&ldquo;</span>The technology we use and the speed at which it evolves makes every day interesting.<span>&rdquo;</span></p>
-                    </blockquote>
-                    <p class="question">What is your greatest accomplishment at&nbsp;Canonical?</p>
-                    <p>We have been able to deliver elegant Ubuntu Cloud solutions based on OpenStack in very complex and demanding environments. Being part of this is a unique experience, it feels like we are designing the future of the cloud now. To achieve this a great deal of research, testing, documenting and sharing was needed and everybody involved gets better and more knowledgeable everyday.</p>
+                <div class="nine-col profile" itemscope itemtype="http://schema.org/Person">
+                    <div class="three-col">
+                        <img class="portrait" itemprop="image" src="{{ ASSET_SERVER_URL }}bbd0a973-portrait-ramon.png" alt="">
+                        <ul class="personal-info">
+                            <li class="name" itemprop="name">Ramon</li>
+                            <li class="role" itemprop="jobTitle">Cloud Architect</li>
+                            <li class="location">London, UK</li>
+                        </ul>
+                    </div>
+                    <div class="six-col last-col no-margin-bottom">
+                        <blockquote class="pull-quote">
+                            <p><span>&ldquo;</span>The technology we use and the speed at which it evolves makes every day interesting.<span>&rdquo;</span></p>
+                        </blockquote>
+                        <p class="question">What is your greatest accomplishment at&nbsp;Canonical?</p>
+                        <p>We have been able to deliver elegant Ubuntu Cloud solutions based on OpenStack in very complex and demanding environments. Being part of this is a unique experience, it feels like we are designing the future of the cloud now. To achieve this a great deal of research, testing, documenting and sharing was needed and everybody involved gets better and more knowledgeable everyday.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -264,3 +279,16 @@
 </div><!-- /.row -->
 
 {% endblock content %}
+
+{% block footer_extra %}
+<script type="text/javascript">
+  /* tabs */
+  core.setupTabs(
+    document.querySelectorAll('.tabbed-menu a'),
+    document.querySelectorAll('.tabbed-content')
+  );
+
+  /* Expand/collapse tabbed-content on small screen view */
+  document.querySelectorAll('.tabbed-content').forEach(core.setupAccordion);
+</script>
+{% endblock footer_extra %}

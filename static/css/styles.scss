@@ -50,10 +50,6 @@
   padding: $gutter_width;
   width: $twelve_col - ( 2 * $gutter_width );
 
-  Notes:
-  -----------------------------------------------------------------
-  Using '.yui3-js-enabled' for CSS with JS enabled as it's there for free atm, be nice to have just js-enabled as a class.
-
 -----------------------------------------------------------------
 -------------------------------------------------------------- */
 @import "core-constants";
@@ -502,7 +498,7 @@ html.no-js #spinner {
 
 /* @section Tabbed menu in accordion mode
 -------------------------------------------------------------- */
-html.yui3-js-enabled {
+html.js {
   .tabbed-menu {
     display: none;
   }
@@ -528,31 +524,30 @@ html.yui3-js-enabled {
 
       div {
         display: none;
+
+        &.active, &.active div {
+          display: block;
+        }
       }
 
       .accordion-button {
-      display: block;
-      width: 100%;
-      height: 30px;
-      font-size: 16px;
+        display: block;
+        width: 100%;
+        height: 30px;
+        font-size: 16px;
         color: $cool_grey;
         padding-top: 2px;
         background: url(https://assets.ubuntu.com/v1/f6fa8249-icon-arrow-down.svg) no-repeat scroll right 3px $light_grey;
-    }
 
-      &.open {
-        .accordion-button {
+        &.active {
           background-image: url(https://assets.ubuntu.com/v1/c65b8106-icon-arrow-up.svg);
           margin-bottom: 10px;
-        }
-        div {
-          display: block;
         }
       }
   }
 
-  html.yui3-js-enabled.opera-mini .tabbed-content,
-  html.yui3-js-enabled.no-svg .tabbed-content {
+  html.js.opera-mini .tabbed-content,
+  html.js.no-svg .tabbed-content {
     .accordion-button {
       background-image: url(https://assets.ubuntu.com/v1/f1cbbaa2-icon-arrow-right.svg)
     }
@@ -632,7 +627,7 @@ html.yui3-js-enabled {
   }
 }
 
-html.yui3-js-enabled.opera-mini {
+html.js.opera-mini {
   .tabbed-content {
     .accordion-button {
         background-image: none;

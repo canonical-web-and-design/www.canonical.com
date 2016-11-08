@@ -94,6 +94,7 @@
       <img src="http://www.ubuntu.com/static/u/img/patterns/tabbed-nav-arrow.png" class="arrow" height="6" width="12" alt="" />
     </div><!-- /col -->
     <div id="jane-silber" class="tabbed-content panel nine-col last-col" itemscope itemtype="http://schema.org/Person">
+      <a class="accordion-button slideless" href="#jane-silber">Jane Silber</a>
       <div class="nine-col">
         <div class="five-col">
           <div class="clearfix">
@@ -112,6 +113,7 @@
       </div><!-- /col -->
     </div><!-- /person -->
     <div id="mark-shuttleworth" class="tabbed-content panel nine-col last-col hide" itemscope itemtype="http://schema.org/Person">
+      <a class="accordion-button slideless" href="#mark-shuttleworth">Mark Shuttleworth</a>
       <div class="nine-col">
         <div class="five-col">
           <div class="clearfix">
@@ -131,6 +133,7 @@
       </div>
     </div>
     <div id="anand-krishnan" class="tabbed-content panel nine-col last-col hide" itemscope itemtype="http://schema.org/Person">
+      <a class="accordion-button slideless" href="#anand-krishnan">Anand Krishnan</a>
       <div class="nine-col">
         <div class="five-col">
           <div class="clearfix">
@@ -149,6 +152,7 @@
       </div><!-- /col -->
     </div><!-- /person -->
     <div id="robbie-williamson" class="tabbed-content panel nine-col last-col hide" itemscope itemtype="http://schema.org/Person">
+      <a class="accordion-button slideless" href="#robbie-williamson">Robbie Williamson</a>
       <div class="nine-col">
         <div class="five-col">
           <div class="clearfix">
@@ -168,6 +172,7 @@
       </div>
     </div>
     <div id="chris-kenyon" class="tabbed-content panel nine-col last-col hide" itemscope itemtype="http://schema.org/Person">
+      <a class="accordion-button slideless" href="#chris-kenyon">Chris Kenyon</a>
       <div class="nine-col">
         <div class="five-col">
           <div class="clearfix">
@@ -186,6 +191,7 @@
       </div>
     </div>
     <div id="neil-french" class="tabbed-content panel nine-col last-col hide" itemscope itemtype="http://schema.org/Person">
+      <a class="accordion-button slideless" href="#neil-french">Neil French</a>
       <div class="nine-col">
         <div class="five-col">
           <div class="clearfix">
@@ -547,7 +553,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
 {% endblock content %}
 
 {% block footer_extra %}
-<!-- script to get news, white papers and case studies -->
 <script type="text/javascript">
   /* tabs */
   core.setupTabs(
@@ -555,13 +560,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
     document.querySelectorAll('.tabbed-content')
   );
 
-  /* News */
-  core.getInsightsFeed('https://insights.ubuntu.com/category/news/feed/', 4, '#news-feed', 'news');
-
-  /* Whitepapers */
-  core.getInsightsFeed('https://insights.ubuntu.com/category/white-papers/feed/', 2, '#resources-feed', 'resource');
-
-  /* Case studies */
-  core.getInsightsFeed('https://insights.ubuntu.com/category/case-studies/feed/', 2, '#resources-feed', 'resource');
+  /* Expand/collapse tabbed-content on small screen view */
+  document.querySelectorAll('.tabbed-content').forEach(core.setupAccordion);
 </script>
 {% endblock footer_extra %}

@@ -41,6 +41,8 @@ core.cookiePolicy = function() {
       createCookieNotification();
     }
   }
+};
+
 
 /**
  * Given a set of anchor triggers and a set of tab items,
@@ -74,6 +76,7 @@ core.setupTabs = function (menuAnchors, tabItems) {
       }(menuAnchors, tabItems)
     );
   });
+};
 
 
 /**
@@ -95,6 +98,7 @@ core.setupAccordion = function(container) {
     }(toggleTarget)
   );
 };
+
 
 /**
  * Add the approproate classes and header to the global nav
