@@ -849,12 +849,6 @@ html.no-svg {
       background-image: url('https://assets.ubuntu.com/v1/48002a8b-external-link.png');
     }
   }
-  #additional-info h2.active span {
-    background-image: url("https://assets.ubuntu.com/v1/43e2b367-arrow_up_9fa097.png");
-  }
-  #additional-info h2 span {
-    background-image: url("https://assets.ubuntu.com/v1/7a7e0d52-arrow_down_9fa097.png");
-  }
 }
 
 /* Medium / Tablet viewport
@@ -937,36 +931,6 @@ html.no-svg {
       display: inline-block;
       min-height: 0;
     }
-  }
-
-  .yes-js #additional-info {
-    margin-bottom: 0;
-    margin-right: 0;
-    min-height: inherit;
-    padding: 0;
-    width: 18%;
-    float: right;
-  }
-
-  .yes-js #additional-info div {
-    display: block;
-    height: auto;
-  }
-
-  .yes-js #additional-info h2 {
-    border: 0;
-    margin: inherit;
-    padding: inherit;
-    padding-bottom: .75em;
-    float: left;
-    margin-left: 0;
-    display: block;
-    width: 100%;
-    clear: both;
-  }
-
-  .yes-js #additional-info h2 span {
-    display: none;
   }
 
   .pull-quote {
