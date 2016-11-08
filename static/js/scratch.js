@@ -46,45 +46,6 @@ YUI().use('node', 'cookie', 'event-resize', 'event', 'jsonp', 'json-parse', func
     });
   };
 
-  core.rssLoader = {
-    "outputFeed" : function(el, jobType) {
-      var element = document.getElementById(el);
-      if (jobType === undefined) {
-        jobType = '';
-      } else {
-        jobType = ' ' + jobType;
-      }
-      return function(result){
-        if (!result.error){
-          var output = '';
-          var thefeeds = result.feed.entries;
-          var spinner = document.getElementById('spinner');
-          if(spinner !== null){
-            spinner.style.display = 'none';
-          }
-          if(element.className.indexOf('with-total') != -1){
-            output += '<li>We currently have '+thefeeds.length+jobType+' vacancies';
-          }
-          for (var i = 0; i < thefeeds.length; i++){
-            output += '<li><a href="{0}">{1} &rsaquo;</a></li>'.format(thefeeds[i].link, thefeeds[i].title);
-          }
-          element.innerHTML = element.innerHTML + output;
-          return output;
-        }
-      }
-    },
-
-    "getFeed" : function(url, numItems, el, jobType){
-      var feedpointer = new google.feeds.Feed(url); //Google Feed API method
-      if(numItems != null){
-        feedpointer.setNumEntries(numItems); //Google Feed API method
-      }else{
-        feedpointer.setNumEntries(250); //Google Feed API method
-      }
-      feedpointer.load(this.outputFeed(el, jobType)); //Google Feed API method
-    }
-  };
-
   core.sectionTabs = function () {
     if (Y.one('.tabbed-content')) {
       var p = Y.one('.tabbed-menu a.active'),
@@ -180,37 +141,6 @@ YUI().use('node', 'cookie', 'event-resize', 'event', 'jsonp', 'json-parse', func
   core.tabbedContent();
   core.resizeListener();
 });
-
-core.rssLoader = function(feedurl, jobType, htmlelement, joblimit) {
-  $.getFeed({
-    url: feedurl,
-    success: function(feed) {
-      var html = '';
-      /* correct grammar for 0 and 1 on total list item */
-      if (feed.items.length === 0) {
-        html += '<li class="total">Sorry, we currently have no ' + jobType + ' vacancies';
-      } else if (feed.items.length === 1) {
-        html += '<li class="total">We currently have ' + feed.items.length + ' ' + jobType + ' vacancy';
-      } else {
-        html += '<li class="total">We currently have ' + feed.items.length + ' ' + jobType + ' vacancies';
-      }
-
-      /* set a default limit for number of jobs returned */
-      if (joblimit == undefined) {
-        joblimit = 5;
-      }
-
-      for(var i = 0; i < feed.items.length && i < joblimit; i++) {
-        var item = feed.items[i];
-        html += "<li><a href='" + item.link + "'>" + item.title + "&nbsp;&rsaquo;</a></li>";
-      }
-
-      /* hide the gif spinner */
-      $('.spinner').hide();
-      $(htmlelement).append(html);
-    }
-  })
-};
 
 core.getInsightsFeed = function(url, maxItems, htmlID, type) {
   $.getFeed({

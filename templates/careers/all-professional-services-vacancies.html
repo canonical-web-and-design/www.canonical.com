@@ -18,13 +18,10 @@
 			<p class="intro">If you are interested in a role in a specific department or location, you can <a href="https://tbe.taleo.net/CH03/ats/careers/jobSearch.jsp?org=CANONICAL&amp;cws=1&amp;rid=86">search jobs</a>.</p>
 		</div>
 		<div class="eight-col">
-			<div class="spinner" id="spinner">
-				<div class="bounce1"></div>
-				<div class="bounce2"></div>
-				<div class="bounce3"></div>
-			</div>
-			<noscript><p>Please enable javascript to display this feed. Otherwise you can view <a href="https://tbe.taleo.net/CH03/ats/careers/searchResults.jsp?org=CANONICAL&cws=1&act=sort&sortColumn=2&sortColumn=0">all vacancies here</a>.</p></noscript>
-			<ul class="vacancies list with-total" id="job-feed"></ul>
+			<ul class="vacancies list with-total" id="job-feed">
+				{% get_rss_feed "https://ch.tbe.taleo.net/CH03/ats/servlet/Rss?org=CANONICAL&cws=1&WebPage=SRCHR&WebVersion=0&_rss_version=2&keywords=professional" as vacancies %}
+				{% include "_includes/vacancies.html" with vacancies=vacancies %}
+			</ul>
 		</div>
 	</div>
 </div>
@@ -45,11 +42,4 @@
 	    </div>
 	</div>
 </div><!-- /.row -->
-
-<script type="text/javascript">
-	window.onload = function() {
-		core.rssLoader.getFeed("https://ch.tbe.taleo.net/CH03/ats/servlet/Rss?org=CANONICAL&cws=1&WebPage=SRCHR&WebVersion=0&_rss_version=2&keywords=professional", null, "job-feed");
-	}
-</script>
-
 {% endblock content %}
