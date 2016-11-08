@@ -19,31 +19,6 @@ YUI().use('node', 'cookie', 'event-resize', 'event', 'jsonp', 'json-parse', func
     });
   };
 
-  core.tabbedContent = function() {
-    Y.all('.tabbed-content .accordion-button').on('click', function(e){
-      e.preventDefault();
-      e.target.get('parentNode').toggleClass('open');
-    });
-  };
-
-  core.sectionTabs = function () {
-    if (Y.one('.tabbed-content')) {
-      var p = Y.one('.tabbed-menu a.active'),
-        s = p.get('href').split('#')[1],
-        w = (p.get('clientWidth') / 2) - 7,
-        x = (p.get('parentNode').getXY()[0] - p.get('parentNode').get('parentNode').getXY()[0]) + w;
-      Y.all('.tabbed-menu a').on('click', function (e) {
-        e.preventDefault();
-        Y.all('.tabbed-menu a').removeClass('active');
-        e.currentTarget.addClass('active');
-        Y.all('.tabbed-content').addClass('hide');
-        s = e.currentTarget.get('hash');
-        Y.one(s).removeClass('hide');
-        x = (e.currentTarget.get('parentNode').getXY()[0] - e.currentTarget.get('parentNode').get('parentNode').getXY()[0]) + w;
-      });
-    }
-  };
-
   core.resizeListener = function() {
     Y.on('windowresize', function(e) {
       core.redrawGlobal();
@@ -116,7 +91,5 @@ YUI().use('node', 'cookie', 'event-resize', 'event', 'jsonp', 'json-parse', func
   };
 
   core.setupAccordion();
-  core.sectionTabs();
-  core.tabbedContent();
   core.resizeListener();
 });
