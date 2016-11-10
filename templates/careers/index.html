@@ -4,8 +4,8 @@
 {% block meta_description %}For anyone interested in open source software and Ubuntu in particular, Canonical is an incredible place to work. Whether you’re a technologist, a designer or a business professional, opportunities exist to work from home or at one of our five key offices around the world. {% endblock %}
 {% block meta_keywords %}Canonical, Ubuntu, Linux, open source, free, software, design, designer, development, developer, programmer, engineer, UX, user, experience, interface, technology, IT, job, career, work, vacancy, vacancies, London, Taipei, Montreal, Boston, Shanghai, work from home, working from home{% endblock %}
 {% block head_extra %}
-    <script src="//assets.ubuntu.com/v1/5d7e5bbf-jquery-2.2.0.min.js"></script>
-    <script src="//assets.ubuntu.com/v1/c954db4a-jfeed_prm.js"></script>
+    <script src="{{ ASSET_SERVER_URL }}5d7e5bbf-jquery-2.2.0.min.js"></script>
+    <script src="{{ ASSET_SERVER_URL }}c954db4a-jfeed_prm.js"></script>
 {% endblock %}
 
 {% block extra_body_class %}careers-home{% endblock %}
@@ -72,7 +72,7 @@
                 <a class="see-all" href="/careers/all-vacancies">See all vacancies &rsaquo;</a>
                 <a class="search" href="https://tbe.taleo.net/CH03/ats/careers/jobSearch.jsp?org=CANONICAL&amp;cws=1&amp;rid=86">Search for jobs &rsaquo;</a>
             </p>
-            <img src="http://www.ubuntu.com/static/u/img/patterns/tabbed-nav-arrow.png" class="arrow" height="6" width="12" alt="" />
+            <img src="{{ ASSET_SERVER_URL }}1000a177-tabbed-nav-arrow.png" class="arrow" height="6" width="12" alt="" />
         </div>
         <div id="design-and-user-experience" class="tabbed-content panel nine-col last-col">
             <a class="accordion-button slideless" href="#design-and-user-experience">Design and User Experience</a>
