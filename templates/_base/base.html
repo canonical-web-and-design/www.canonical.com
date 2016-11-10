@@ -105,14 +105,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
 
 <!--[if gte IE 9]><!-->
-<script src="{{ ASSET_SERVER_URL }}5b54324c-global.js"></script>
+<script src="{{ ASSET_SERVER_URL }}3df515d1-global.js"></script>
 <script src="{{ STATIC_URL }}js/polyfills.js"></script>
 <script src="{{ STATIC_URL }}js/utilities.js"></script>
 <script src="{{ STATIC_URL }}js/core.js"></script>
 
 <script>
   // Setup global nav
-  var globalNav = document.querySelector('#nav-global');
+  var globalNav = ubuntu.globalNav.setup();
   core.setupGlobalNav(globalNav);
   core.positionGlobalNav(globalNav);
   window.addEventListener('resize', function() {core.positionGlobalNav(globalNav);});
