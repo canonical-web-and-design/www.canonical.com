@@ -6,64 +6,50 @@
 
 {% block content %}
 <div class="row row-hero">
-	<div class="inner-wrapper">
-		<div class="six-col">
-			<h1>All cloud vacancies</h1>
-			<p>No other operating system can compete with Ubuntu’s long history of integration with the open cloud – and we are always working to widen that lead. Our cloud teams work on MaaS, our provisioning software, and Juju, our service orchestration tool – not to mention OpenStack itself.
+    <div class="inner-wrapper">
+        <div class="six-col">
+            <h1>All cloud vacancies</h1>
+            <p>No other operating system can compete with Ubuntu’s long history of integration with the open cloud – and we are always working to widen that lead. Our cloud teams work on MaaS, our provisioning software, and Juju, our service orchestration tool – not to mention OpenStack itself.
 In short, we’re all about cloud. Are you?</p>
-			<p><a href="http://www.ubuntu.com/cloud" class="external">More about our cloud products</a></p>
-		</div>
-		<div class="six-col last-col text-center">
-			<img src="{{ ASSET_SERVER_URL }}fd5d58d0-image-cloudvacancies.svg" width="350" alt="Cloud">
-		</div>
-	</div>
+            <p><a href="http://www.ubuntu.com/cloud" class="external">More about our cloud products</a></p>
+        </div>
+        <div class="six-col last-col text-center">
+            <img src="{{ ASSET_SERVER_URL }}fd5d58d0-image-cloudvacancies.svg" width="350" alt="Cloud">
+        </div>
+    </div>
 </div>
 
 <div class="row strip strip-light">
-	<div class="inner-wrapper">
-		<div class="four-col profile">
-			<img class="portrait" itemprop="image" src="{{ ASSET_SERVER_URL }}4afcf1ef-image-jeff.png" alt="Jeff">
-			<ul class="personal-info">
-				<li class="name" itemprop="name">Jeff</li>
-				<li class="role" itemprop="jobTitle">Server Certification Engineer</li>
-				<li class="location">USA</li>
-			</ul>
-		</div>
-		<div class="six-col last-col">
-			<blockquote class="pull-quote">
-				<p><span>“</span>It’s about the awesome people I get to work with daily and the opportunity to directly affect the direction of Ubuntu.<span>”</span></p>
-			</blockquote>
-			<p class="question">What is your greatest accomplishment at Canonical?</p>
-			<p>Building the Server Certification Programme up from just a concept to a full, self&dash;sustaining programme.  Also designing most of the server test suite and applying that to the cloud.</p>
-		</div>
-	</div>
+    <div class="inner-wrapper">
+        <div class="four-col profile">
+            <img class="portrait" itemprop="image" src="{{ ASSET_SERVER_URL }}4afcf1ef-image-jeff.png" alt="Jeff">
+            <ul class="personal-info">
+                <li class="name" itemprop="name">Jeff</li>
+                <li class="role" itemprop="jobTitle">Server Certification Engineer</li>
+                <li class="location">USA</li>
+            </ul>
+        </div>
+        <div class="six-col last-col">
+            <blockquote class="pull-quote">
+                <p><span>“</span>It’s about the awesome people I get to work with daily and the opportunity to directly affect the direction of Ubuntu.<span>”</span></p>
+            </blockquote>
+            <p class="question">What is your greatest accomplishment at Canonical?</p>
+            <p>Building the Server Certification Programme up from just a concept to a full, self&dash;sustaining programme.  Also designing most of the server test suite and applying that to the cloud.</p>
+        </div>
+    </div>
 </div>
 
 <div class="strip row">
-	<div class="inner-wrapper">
-		<div class="eight-col">
-			<ul class="vacancies list with-total" id="job-feed">
-				{% get_rss_feed "https://ch.tbe.taleo.net/CH03/ats/servlet/Rss?org=CANONICAL&cws=1&WebPage=SRCHR&WebVersion=0&_rss_version=2&CUSTOM_1123=1371" as vacancies %}
-				{% include "_includes/vacancies.html" with vacancies=vacancies %}
-			</ul>
-		</div>
-	</div>
+    <div class="inner-wrapper">
+        <div class="eight-col">
+            <ul class="vacancies list with-total" id="job-feed">
+                {% get_rss_feed "http://ldd.tbe.taleo.net/ldd03/ats/servlet/Rss?org=CANONICAL&cws=1&_rss_version=2&CUSTOM_1123=1371" as vacancies %}
+                {% include "_includes/vacancies.html" with vacancies=vacancies %}
+            </ul>
+        </div>
+    </div>
 </div>
 
-<div class="row row-contextual-footer">
-	<div class="inner-wrapper vertical-divider">
-	    <div class="featured six-col">
-	        <h3><a href="https://tbe.taleo.net/CH03/ats/careers/jobSearch.jsp?org=CANONICAL&cws=1&rid=86">Search roles &rsaquo;</a></h3>
-	        <p>Search for vacant positions by location, department or by using keywords.</p>
-	    </div>
-	    <div class="three-col">
-	        <h3><a href="/careers/all-vacancies">View all roles &rsaquo;</a></h3>
-	        <p>We're always on the lookout for people with experience in open source software, the cloud or mobile devices.</p>
-	    </div>
-	    <div class="three-col last-col">
-	        <h3><a href="/careers">Working at Canonical &rsaquo;</a></h3>
-	        <p>Whether you&rsquo;re a designer, a technologist or a business professional, Canonical is an incredible place to work. </p>
-	    </div>
-	</div>
-</div><!-- /.row -->
+{% include "careers/vacancies_contextual_footer.html" %}
+
 {% endblock content %}
