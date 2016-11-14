@@ -15,7 +15,7 @@
 		</div>
 		<div class="eight-col">
 			<ul class="vacancies list with-total" id="job-feed">
-				{% get_rss_feed "https://ldd.tbe.taleo.net/ldd03/ats/servlet/Rss?org=CANONICAL&cws=1&_rss_version=2&CUSTOM_755=11588,6158,616" as vacancies %}
+				{% get_rss_feed "http://ldd.tbe.taleo.net/ldd03/ats/servlet/Rss?org=CANONICAL&cws=1&_rss_version=2&CUSTOM_755=11588,6158,616" as vacancies %}
 				{% include "_includes/vacancies.html" with vacancies=vacancies %}
 			</ul>
 		</div>
