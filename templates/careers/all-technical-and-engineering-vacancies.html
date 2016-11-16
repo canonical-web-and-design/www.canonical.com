@@ -6,36 +6,22 @@
 
 {% block content %}
 <div class="strip row">
-	<div class="inner-wrapper">
-		<div class="eight-col">
-			<h1>All Technical and Engineering vacancies</h1>
-		</div>
-		<div class="eight-col">
-			<p class="intro">If you are interested in a role in a specific department or location, you can <a href="https://tbe.taleo.net/CH03/ats/careers/jobSearch.jsp?org=CANONICAL&amp;cws=1&amp;rid=86">search jobs</a>.</p>
-		</div>
-		<div class="eight-col">
-			<ul class="vacancies list with-total" id="job-feed">
-				{% get_rss_feed "https://ch.tbe.taleo.net/CH03/ats/servlet/Rss?org=CANONICAL&cws=1&WebPage=SRCHR&WebVersion=0&_rss_version=2&CUSTOM_755=617" as vacancies %}
-				{% include "_includes/vacancies.html" with vacancies=vacancies %}
-			</ul>
-		</div>
-	</div>
+    <div class="inner-wrapper">
+        <div class="eight-col">
+            <h1>All Technical and Engineering vacancies</h1>
+        </div>
+        <div class="eight-col">
+            <p class="intro">If you are interested in a role in a specific department or location, you can <a href="https://ldd.tbe.taleo.net/ldd03/ats/careers/jobSearch.jsp?org=CANONICAL&cws=1&rid=86">search jobs</a>.</p>
+        </div>
+        <div class="eight-col">
+            <ul class="vacancies list with-total" id="job-feed">
+                {% get_rss_feed "http://ldd.tbe.taleo.net/ldd03/ats/servlet/Rss?org=CANONICAL&cws=1&_rss_version=2&CUSTOM_755=617" as vacancies %}
+                {% include "_includes/vacancies.html" with vacancies=vacancies %}
+            </ul>
+        </div>
+    </div>
 </div>
 
-<div class="row row-contextual-footer">
-	<div class="inner-wrapper vertical-divider">
-	    <div class="featured six-col">
-	        <h3><a href="https://tbe.taleo.net/CH03/ats/careers/jobSearch.jsp?org=CANONICAL&cws=1&rid=86">Search roles &rsaquo;</a></h3>
-	        <p>Search for vacant positions by location, department or by using keywords.</p>
-	    </div>
-	    <div class="three-col">
-	        <h3><a href="/careers/all-vacancies">View all roles &rsaquo;</a></h3>
-	        <p>We're always on the lookout for people with experience in open source software, the cloud or mobile devices.</p>
-	    </div>
-	    <div class="three-col last-col">
-	        <h3><a href="/careers">Working at Canonical &rsaquo;</a></h3>
-	        <p>Whether you&rsquo;re a designer, a technologist or a business professional, Canonical is an incredible place to work. </p>
-	    </div>
-	</div>
-</div><!-- /.row -->
+{% include "careers/vacancies_contextual_footer.html" %}
+
 {% endblock content %}
