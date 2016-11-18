@@ -19,6 +19,9 @@ INSTALLED_APPS = ['django_versioned_static_url']
 
 ALLOWED_HOSTS = ['*']
 
+USE_X_FORWARDED_HOST = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 MIDDLEWARE_CLASSES = []
 
 ROOT_URLCONF = 'webapp.urls'
