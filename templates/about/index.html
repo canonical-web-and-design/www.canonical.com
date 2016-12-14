@@ -236,6 +236,13 @@ function initialize() {
           '110 Southwark Street <br />' +
           'London SE1 0SU<br />United Kingdom</p>'
   });
+  var austinInfo = new google.maps.InfoWindow({
+      content: '<h2>Austin, USA</h2>' +
+          '<p>Canonical USA Inc. <br />' +
+          'Link Flex <br />' +
+          '2301 W Anderson Ln <br />' +
+          'Austin, TX 78757<br />USA</p>'
+  });
   var bostonInfo = new google.maps.InfoWindow({
       content: '<h2>Boston, United States</h2>' +
         '<p>Canonical USA Inc. <br />' +
@@ -292,6 +299,11 @@ function initialize() {
       map: map,
       title:"London, United Kingdom"
   });
+  var austin = new google.maps.Marker({
+      position: new google.maps.LatLng(30.3074624,-98.0335911),
+      map: map,
+      title:"Austin, United States"
+  });
   var boston = new google.maps.Marker({
       position: new google.maps.LatLng(42.428691,-71.228023),
       map: map,
@@ -324,6 +336,7 @@ function initialize() {
   });
 
   google.maps.event.addListener(london, 'click', function() {
+    austinInfo.close();
     bostonInfo.close();
     shanghaiInfo.close();
     beijingInfo.close();
@@ -333,6 +346,7 @@ function initialize() {
       londonInfo.open(map,london);
   });
   google.maps.event.addListener(boston, 'click', function() {
+    austinInfo.close();
     londonInfo.close();
     shanghaiInfo.close();
     beijingInfo.close();
@@ -341,7 +355,18 @@ function initialize() {
     japanInfo.close();
       bostonInfo.open(map,boston);
   });
+  google.maps.event.addListener(austin, 'click', function() {
+    bostonInfo.close();
+    londonInfo.close();
+    shanghaiInfo.close();
+    beijingInfo.close();
+    taipeiInfo.close();
+    iomInfo.close();
+    japanInfo.close();
+      austinInfo.open(map,austin);
+  });
   google.maps.event.addListener(shanghai, 'click', function() {
+    austinInfo.close();
     bostonInfo.close();
     londonInfo.close();
     beijingInfo.close();
@@ -351,6 +376,7 @@ function initialize() {
       shanghaiInfo.open(map,shanghai);
   });
   google.maps.event.addListener(beijing, 'click', function() {
+    austinInfo.close();
     bostonInfo.close();
     shanghaiInfo.close();
     londonInfo.close();
@@ -360,6 +386,7 @@ function initialize() {
       beijingInfo.open(map,beijing);
   });
   google.maps.event.addListener(taipei, 'click', function() {
+    austinInfo.close();
     bostonInfo.close();
     shanghaiInfo.close();
     beijingInfo.close();
@@ -369,6 +396,7 @@ function initialize() {
       taipeiInfo.open(map,taipei);
   });
   google.maps.event.addListener(iom, 'click', function() {
+    austinInfo.close();
     bostonInfo.close();
     shanghaiInfo.close();
     beijingInfo.close();
@@ -378,6 +406,7 @@ function initialize() {
       iomInfo.open(map,iom);
   });
   google.maps.event.addListener(japan, 'click', function() {
+    austinInfo.close();
     bostonInfo.close();
     shanghaiInfo.close();
     beijingInfo.close();
@@ -406,6 +435,19 @@ google.maps.event.addDomListener(window, 'load', initialize);
       <span itemprop="addressRegion">London</span>, <span itemprop="postalCode">SE1 0SU</span><br />
       <span itemprop="addressCountry">United Kingdom</span><br />
       <a href="https://maps.google.co.uk/maps?q=5th+Floor,+Blue+Fin+Building+110+Southwark+Street+London,+SE1+0SU+United+Kingdom&amp;hl=en&amp;sll=52.8382,-2.327815&amp;sspn=7.78157,20.43457&amp;hnear=Blue+Fin+Bldg,+110+Southwark+St,+London+SE1+0SU,+United+Kingdom&amp;t=m&amp;z=16">View map &rsaquo;</a></p>
+    </div>
+  </div><!-- /address -->
+
+  <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="tabbed-content panel hide address">
+    <a class="accordion-button slideless" href="#">Austin, United States</a>
+    <div>
+      <h3 class="title">Austin, United States</h3>
+      <p>Canonical USA Inc.<br />
+      <span itemprop="streetAddress">Link Flex</span><br />
+      <span itemprop="streetAddress">2301 W Anderson Ln</span><br />
+      <span itemprop="addressRegion">Austin</span>, <span itemprop="postalCode">TX 78757</span><br />
+      <span itemprop="addressCountry">United States of America</span><br />
+      <a href="https://www.google.co.uk/maps/place/Austin,+TX,+USA/@30.3074624,-98.0335911,10z/data=!3m1!4b1!4m5!3m4!1s0x8644b599a0cc032f:0x5d9b464bd469d57a!8m2!3d30.267153!4d-97.7430608">View map &rsaquo;</a></p>
     </div>
   </div><!-- /address -->
 
