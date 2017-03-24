@@ -226,16 +226,20 @@ header.banner {
   border-bottom: none;
   overflow: hidden;
 
-  .nav-primary.nav-right .logo a {
-    @include background_size(130px 19px);
-    background-image: url(https://assets.ubuntu.com/v1/2eec3fd9-logo.svg);
-    background-position: 0 15px;
-    background-repeat: no-repeat;
-    min-width: 127px;
-    padding-top: 10px;
+  .nav-primary.nav-right .logo {
+    margin-left: 5px;
 
-    img {
-      display: none;
+    a {
+      @include background_size(130px 19px);
+      background-image: url(https://assets.ubuntu.com/v1/2eec3fd9-logo.svg);
+      background-position: 0 15px;
+      background-repeat: no-repeat;
+      min-width: 127px;
+      padding-top: 10px;
+
+      img {
+        display: none;
+      }
     }
   }
 
