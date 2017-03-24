@@ -939,8 +939,8 @@ html.no-svg {
         background: url(https://assets.ubuntu.com/v1/83d13882-image-footer-ubuntu.svg);
         background-position: 100% 5px;
         background-repeat: no-repeat;
-        font-size: 1.219em; /*1.25em;*/
-        padding-right: 150px;
+        font-size: 1.219em;
+        padding-right: 140px;
         min-height: 150px;
       }
     }
@@ -966,12 +966,10 @@ html.no-svg {
   .partners .row-contextual-footer .featured p {
     background-image: url(https://assets.ubuntu.com/v1/fe022948-image-footer-certification.svg);
     background-position: 96% 5px;
-    padding-right: 140px;
   }
   .careers .row-contextual-footer .featured p {
     background-image: url(https://assets.ubuntu.com/v1/5099cfac-image-footer-search.svg);
     background-position: 96% 5px;
-    padding-right: 140px;
     min-height: 115px;
   }
   .projects .row-contextual-footer .featured p {
