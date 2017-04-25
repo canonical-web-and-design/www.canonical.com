@@ -7,6 +7,7 @@ Canonical.com website project
    https://robinwinslow.co.uk/2015/04/02/installing-docker-on-ubuntu/
 2. Install docker-compose > 1.4: `sudo pip install --upgrade docker-compose`
 3. Login with your hub.docker.com account: `docker login`
+4. Get all the pip requirements `pip install -r requirements/dev.txt`
 
 ## Run
 
