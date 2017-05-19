@@ -11,11 +11,15 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-# Keep it secret, keep it safe!
-SECRET_KEY = 's0l40(!bw*+8@d-47(q@__qe9^ha1j1kh0rn4r)c#uvs0vmeyr'
-
 # See https://docs.djangoproject.com/en/dev/ref/contrib/
-INSTALLED_APPS = ['django_versioned_static_url']
+INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
+    'django.contrib.staticfiles',
+    'django_versioned_static_url',
+]
+
+SECRET_KEY = os.environ.get('SECRET_KEY', 'no_secret')
+DEBUG = os.environ.get('DJANGO_DEBUG', 'false').lower() == 'true'
 
 ALLOWED_HOSTS = ['*']
 
@@ -23,6 +27,9 @@ USE_X_FORWARDED_HOST = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 MIDDLEWARE_CLASSES = []
+
+WHITENOISE_MAX_AGE = 31557600
+WHITENOISE_ALLOW_ALL_ORIGINS = False
 
 ROOT_URLCONF = 'webapp.urls'
 WSGI_APPLICATION = 'webapp.wsgi.application'
