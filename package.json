@@ -4,7 +4,10 @@
   "description": "Django website for canonical.com",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node-sass --include-path node_modules static/sass --output static/css",
+    "watch": "node-sass --include-path node_modules --source-map true --watch static/sass --output static/css",
+    "test": "sass-lint static/**/*.scss --verbose --no-exit",
+    "clean": "rm -rf node_modules yarn-error.log static/css"
   },
   "keywords": [
     "website",
@@ -12,7 +15,9 @@
   ],
   "author": "Canonical webteam",
   "license": "LGPL v3",
-  "dependencies": {
-    "canonical-vanilla-theme": "0.0.20"
+  "devDependencies": {
+    "sass-lint": "^1.10.2",
+    "node-sass": "^4.5.3",
+    "canonical-vanilla-theme": "0.0.24"
   }
 }
