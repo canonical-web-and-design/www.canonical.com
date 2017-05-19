@@ -1,15 +1,46 @@
-.bzr/
-*.css
+# OS files
+Desktop.ini
+Thumbs.db
+._*
+*.DS_Store
+*~
+\#*\#
+__*
+.AppleDouble
+.LSOverride
+
+# Cache and backup
+*.bak
 *.pyc
-__pycache__
-db.sqlite3
-env
-.sass-cache
-templates/static/css/styles.css
+*-cache/
+
+# Local data
+*.sqlite*
+*.log
+logs/
+pids
 *.pid
-*.css.map
-bzr-repo/
-django-error.log
+*.seed
+.*-metadata
+
+# Local dependencies
+.bundle/
 node_modules/
-.web_cache/
-cache.sqlite
+bower_components/
+vendor/
+
+# Build files
+/build/
+_site/
+
+# Local environment settings
+.docker-project
+.envrc
+env/
+env3/
+
+# Sass
+*.css
+*.css.map
+
+# Project-specific ignores
