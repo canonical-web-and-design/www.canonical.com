@@ -14,7 +14,7 @@
 set -euo pipefail
 
 # Define the versions of the two docker images
-django_image="canonicalwebteam/django:v2.1.0"
+django_image="canonicalwebteam/django:v2.1.1"
 node_image="canonicalwebteam/node:v0.1.0"
 
 USAGE="Usage
