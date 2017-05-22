@@ -1,6 +1,6 @@
 cachecontrol==0.11.6
 lockfile==0.12.2
-Django==1.9
+Django==1.11.1
 whitenoise==3.1
 django-template-finder-view==0.2
 django-versioned-static-url==0.1
