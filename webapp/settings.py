@@ -13,9 +13,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # See https://docs.djangoproject.com/en/dev/ref/contrib/
 INSTALLED_APPS = [
+    'canonicalwebteam',
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
-    'django_versioned_static_url',
 ]
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'no_secret')
