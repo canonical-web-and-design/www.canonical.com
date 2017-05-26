@@ -1,4 +1,4 @@
-<!doctype html>
+{% load versioned_static %}<!doctype html>
 <!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr"> <![endif]-->
 <!--[if IE 7]>    <html class="lt-ie9 lt-ie8" lang="en" dir="ltr"> <![endif]-->
 <!--[if IE 8]>    <html class="lt-ie9" lang="en" dir="ltr"> <![endif]-->
@@ -23,13 +23,12 @@
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ ASSET_SERVER_URL }}f193fb82-apple-touch-icon-72x72-precomposed.png">
 <link rel="apple-touch-icon-precomposed" href="{{ ASSET_SERVER_URL }}205d458b-apple-touch-icon-precomposed.png">
 
-<link type="text/plain" rel="author" href="{{ STATIC_URL }}files/humans.txt" />
+<link type="text/plain" rel="author" href="{% versioned_static 'files/humans.txt' %}" />
 
 <!-- google fonts -->
 <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,700,700italic|Ubuntu+Mono' rel='stylesheet' type='text/css' />
 <link rel="stylesheet" type="text/css" media="screen" href="{{ ASSET_SERVER_URL }}a722db6e-global.css" />
-<link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}css/styles.css" />
-<link rel="stylesheet" type="text/css" media="print" href="{{ STATIC_URL }}css/core-print.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="{% versioned_static 'css/styles.css' %}" />
 
 <!--[if lte IE 8]>
 <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}css/ie/ie7.css" />
