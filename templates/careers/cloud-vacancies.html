@@ -40,7 +40,7 @@ In short, we’re all about cloud. Are you?</p>
 
 <div class="strip row">
     <div class="inner-wrapper">
-        <div class="eight-col">
+        <div class="col-8">
             <ul class="vacancies list with-total" id="job-feed">
                 {% get_rss_feed "http://ldd.tbe.taleo.net/ldd03/ats/servlet/Rss?org=CANONICAL&cws=1&_rss_version=2&CUSTOM_1123=1371" as vacancies %}
                 {% include "_includes/vacancies.html" with vacancies=vacancies %}

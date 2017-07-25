@@ -13,7 +13,7 @@
             <p><a href="https://jujucharms.com/about" class="external">Learn more about Juju</a></p>
             <p><a href="https://code.launchpad.net/juju-core" class="external">Check out the code</a></p>
         </div>
-        <div class="push-one five-col">
+        <div class="push-one col-5">
             <img src="{{ ASSET_SERVER_URL }}e930b8ae-image-govacancies.svg" alt="Golang Gopher">
         </div>
     </div>
@@ -41,7 +41,7 @@
 
 <div class="strip row">
     <div class="inner-wrapper">
-        <div class="eight-col">
+        <div class="col-8">
             <ul class="vacancies list with-total" id="job-feed">
                 {% get_rss_feed "http://ldd.tbe.taleo.net/ldd03/ats/servlet/Rss?org=CANONICAL&cws=1&_rss_version=2&CUSTOM_1123=1372" as vacancies %}
                 {% include "_includes/vacancies.html" with vacancies=vacancies %}
