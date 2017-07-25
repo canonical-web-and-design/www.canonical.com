@@ -5,7 +5,7 @@
 
 {% block content %}
 <div class="row row-hero">
-    <div class="inner-wrapper">
+    <div class="row">
         <div class="col-6">
             <h1>All Go vacancies</h1>
             <p>The Juju Engineering Team is responsible for turning our service orchestration strategy into reality &mdash; and we need more great Go engineers. These roles involve more than just coding, however. We need people who can solve complex problems, collaborate with a global community and work directly with our biggest clients. </p>
@@ -20,7 +20,7 @@
 </div>
 
 <div class="row strip strip-light">
-    <div class="inner-wrapper">
+    <div class="row">
         <div class="four-col profile">
             <img class="portrait" itemprop="image" src="{{ ASSET_SERVER_URL }}87807b55-image-dimiter.png" alt="Dimiter">
             <ul class="personal-info">
@@ -40,7 +40,7 @@
 </div>
 
 <div class="strip row">
-    <div class="inner-wrapper">
+    <div class="row">
         <div class="col-8">
             <ul class="vacancies list with-total" id="job-feed">
                 {% get_rss_feed "http://ldd.tbe.taleo.net/ldd03/ats/servlet/Rss?org=CANONICAL&cws=1&_rss_version=2&CUSTOM_1123=1372" as vacancies %}

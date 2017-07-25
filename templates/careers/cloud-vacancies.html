@@ -5,7 +5,7 @@
 
 {% block content %}
 <div class="row row-hero">
-    <div class="inner-wrapper">
+    <div class="row">
         <div class="col-6">
             <h1>All cloud vacancies</h1>
             <p>No other operating system can compete with Ubuntu’s long history of integration with the open cloud – and we are always working to widen that lead. Our cloud teams work on MaaS, our provisioning software, and Juju, our service orchestration tool – not to mention OpenStack itself.
@@ -19,7 +19,7 @@ In short, we’re all about cloud. Are you?</p>
 </div>
 
 <div class="row strip strip-light">
-    <div class="inner-wrapper">
+    <div class="row">
         <div class="four-col profile">
             <img class="portrait" itemprop="image" src="{{ ASSET_SERVER_URL }}4afcf1ef-image-jeff.png" alt="Jeff">
             <ul class="personal-info">
@@ -39,7 +39,7 @@ In short, we’re all about cloud. Are you?</p>
 </div>
 
 <div class="strip row">
-    <div class="inner-wrapper">
+    <div class="row">
         <div class="col-8">
             <ul class="vacancies list with-total" id="job-feed">
                 {% get_rss_feed "http://ldd.tbe.taleo.net/ldd03/ats/servlet/Rss?org=CANONICAL&cws=1&_rss_version=2&CUSTOM_1123=1371" as vacancies %}

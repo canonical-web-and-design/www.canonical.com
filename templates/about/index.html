@@ -12,7 +12,7 @@
 
 {% block content %}
 <div class="row row-hero">
-  <div class="inner-wrapper">
+  <div class="row">
     <div class="col-8">
       <h1>At Canonical, we believe in the power of open source to change the world</h1>
     </div>
@@ -26,7 +26,7 @@
 </div>
 
 <div class="strip-dark row">
-  <div class="inner-wrapper">
+  <div class="row">
     <h2>What we do</h2>
         <ul class="connected-list">
             <li class="col-3">
@@ -62,7 +62,7 @@
 </div>
 
 <div class="row strip-light">
-  <div class="inner-wrapper">
+  <div class="row">
     <div class="col-7">
       <h2>Canonical and open source</h2>
       <p>We believe in the power of open source software; Ubuntu could not exist without its worldwide community of voluntary developers. We are committed to creating it, refining it, certifying it for reliability and promoting its use. As well as launching and running our own projects, we contribute staff, code and funding to many more.</p>
@@ -75,13 +75,13 @@
 </div>
 
 <div class="row join">
-  <div class="inner-wrapper">
+  <div class="row">
     <div class="col-12 no-margin-bottom">
       <h2>Our management team</h2>
     </div>
     <div class="col-3 no-margin-bottom">
       <div class="tabbed-menu">
-        <ul class="no-bullets">
+        <ul class="p-list">
           <li><a class="active slideless" href="#mark-shuttleworth">Mark Shuttleworth</a></li>
           <li><a class="slideless" href="#anand-krishnan">Anand Krishnan</a></li>
           <li><a class="slideless" href="#mike-bell">Mike Bell</a></li>
@@ -516,7 +516,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 </div><!-- /map-address -->
 
 <div id="contact-row" class="row">
-  <div class="inner-wrapper">
+  <div class="row">
     <div class="col-4">
       <blockquote class="quote quote-left-bottom">
         <h2 class="icon-quote">Contact us</h2>
@@ -540,14 +540,14 @@ google.maps.event.addDomListener(window, 'load', initialize);
 </div>
 
   <div class="row strip-light">
-    <div class="inner-wrapper">
+    <div class="row">
       <div class="col-12">
         <h2>Further information</h2>
       </div>
     <div class="col-4">
       <h3><a href="https://insights.ubuntu.com/press-centre/" class="further-news">News &rsaquo;</a></h3>
       <div>
-        <ul class="no-bullets" id="news-feed">
+        <ul class="p-list" id="news-feed">
           {% get_rss_feed "https://insights.ubuntu.com/category/news/feed/" limit=4 as news_items %}
           {% include "_includes/article-items.html" with items=news_items %}
         </ul>
@@ -556,7 +556,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
     <div class="col-4">
       <h3><a href="https://insights.ubuntu.com/" class="further-resources">Resources &rsaquo;</a></h3>
       <div>
-        <ul class="no-bullets" id="resources-feed">
+        <ul class="p-list" id="resources-feed">
           {% get_rss_feed "https://insights.ubuntu.com/category/white-papers/feed/" limit=2 as whitepaper_items %}
           {% get_rss_feed "https://insights.ubuntu.com/category/case-studies/feed/" limit=2 as case_study_items %}
           {% include "_includes/article-items.html" with items=whitepaper_items %}

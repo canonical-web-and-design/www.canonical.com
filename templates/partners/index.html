@@ -5,7 +5,7 @@
 
 {% block content %}
 <div class="row row-hero">
-  <div class="inner-wrapper">
+  <div class="row">
     <h1 class="col-12">We partner with industry leaders</h1>
     <div class="nine-col">
       <p>At Canonical, we provide the services our partners need to ensure their hardware and software works optimally with the Ubuntu platform. This means working with OEMs, ODMs, ISVs and IHVs, delivering the software and services to complement their core competencies in design, manufacture and distribution. We help our partners deliver their products without the cost and complexity of operating system development, software engineering or global content distribution agreements.</p>
@@ -17,7 +17,7 @@
 <div class="row row-management strip-light"><div></div></div>
 
 <div class="row row-cloud strip-light">
-  <div class="inner-wrapper">
+  <div class="row">
     <div class="nine-col">
       <h2>Ubuntu in the cloud</h2>
       <p>Ubuntu has been involved in OpenStack since the project began. It is now the world&rsquo;s most popular choice of operating system for production OpenStack clouds, with over 60% of deployments running Ubuntu.</p>
@@ -32,7 +32,7 @@
 </div>
 
 <div class="row row-companies">
-  <div class="inner-wrapper">
+  <div class="row">
     <div class="panel panel--alt col-12">
       <h2 class="muted-heading">A selection of our cloud partners</h2>
       {% get_json_feed "http://partners.ubuntu.com/partners.json?technology__name=Cloud/server&featured=true" limit=10 as cloud_partners %}
@@ -47,7 +47,7 @@
 </div>
 
 <div class="row row-client strip-light">
-  <div class="inner-wrapper">
+  <div class="row">
     <h2 class="col-12">Ubuntu IoT devices</h2>
     <div class="col-6">
       <p>Ubuntu is used on 100,000s of advertising screens and on robots across hospitality, retail and mining industries worldwide. Canonical collaborates with semiconductor and device manufacturers, making Ubuntu the number one platform for robotics and self-driving cars. Canonical also partners with device manufacturers across their product lifecycle: product concept, integration, development, ecosystem building and monetisation.</p>
@@ -56,7 +56,7 @@
       <img src="{{ ASSET_SERVER_URL }}808a4e5b-aerolion-drone.png" alt="" />
     </div>
   </div>
-  <div class="inner-wrapper">
+  <div class="row">
     <h2 class="col-6 prepend-six">Ubuntu on the PC</h2>
     <div class="col-6 priority-0">
       <img src="{{ ASSET_SERVER_URL }}abd6307b-image-laptop.png" alt="" />
@@ -69,7 +69,7 @@
 </div>
 
 <div class="row row-companies">
-  <div class="inner-wrapper">
+  <div class="row">
     <div class="panel panel--alt col-12">
       <h2 class="muted-heading">A selection of our IoT device and PC partners</h2>
       {% get_json_feed "http://partners.ubuntu.com/partners.json?programme__name=Technical Partner Programme" limit=10 as client_partners %}
@@ -84,7 +84,7 @@
 </div>
 
 <div class="row row-partners strip-dark">
-  <div class="inner-wrapper">
+  <div class="row">
     <div class="col-7">
       <h2>How we work with our partners</h2>
       <p>By formalising their partnership with Canonical, hardware makers, ISVs, cloud providers and mobile carriers can realise a wealth of benefits.</p>
