@@ -12,6 +12,11 @@ $color-link: $color-brand;
 @import '../../node_modules/vanilla-brochure-theme/scss/theme';
 @include vanilla-brochure-theme
 
+// custom animations
+@import 'custom/animations';
+
 // custom code
 @import 'custom/lightbulb-animation';
 @import 'custom/inline-ubuntu-logo';
+
+@import 'custom/ubuntu-eco-system-animation';
