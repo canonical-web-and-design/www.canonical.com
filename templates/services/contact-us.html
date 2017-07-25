@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<div class="p-strip">
+<section class="p-strip">
   <div class="row">
     <div class="col-8">
       <h1>Contact Canonical</h1>
@@ -291,7 +291,7 @@
                   <option value="ZW">Zimbabwe</option>
                   <option value=""></option>
                   <span class="mktFormMsg"></span>
-                </select>
+              </select>
               </span>
             </li>
             <li class="mktField"><label>State:</label><span class="mktInput">
@@ -402,16 +402,17 @@
           <input type="hidden" name="retURL" value="http://www.canonical.com/services/thank-you" />
         </fieldset>
         <script>
-        $("#mktoForm_1240").validate({
-          errorElement: "span",
-          errorClass: "mktFormMsg mktError",
-          onkeyup: false,
-          onclick: false,
-          onblur: false
-        });
+          $("#mktoForm_1240").validate({
+            errorElement: "span",
+            errorClass: "mktFormMsg mktError",
+            onkeyup: false,
+            onclick: false,
+            onblur: false
+          });
         </script>
       </form>
     </div>
   </div>
-</div>
+</section>
+
 {% endblock content %}
