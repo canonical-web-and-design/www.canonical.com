@@ -41,8 +41,13 @@
     left: 50%;
     margin: -61px 0 0 -427px;
     position: absolute;
-    top: 50%;
+    top: -80px;
     width: 600px;
+    z-index: -999;
+
+    @media (max-width: $breakpoint-medium) {
+      display: none;
+    }
   }
 
   .products-hero-ubuntu {
