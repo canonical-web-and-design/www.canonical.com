@@ -75,7 +75,7 @@
         <li><a class="p-link--external" href="https://ldd.tbe.taleo.net/ldd03/ats/careers/jobSearch.jsp?org=CANONICAL&amp;cws=1&amp;rid=86">Search for jobs &rsaquo;</a></li>
       </ul>
     </div>
-    <div class="col-9 tabbed-content p-card hide" id="design-and-user-experience">
+    <div class="col-9 tabbed-content p-card" id="design-and-user-experience">
       <div class="row">
         <div class="col-9">
           <h3>Design and User Experience</h3>
@@ -109,8 +109,7 @@
         </div>
       </div>
     </div>
-
-    <div class="col-9 tabbed-content p-card hide" id="technical-and-engineering">
+    <div class="col-9 tabbed-content p-card u-hide" id="technical-and-engineering">
       <div class="row">
         <div class="col-9">
           <h3>Technical and Engineering</h3>
@@ -145,8 +144,7 @@
         </div>
       </div>
     </div>
-
-    <div class="col-9 tabbed-content p-card hide" id="marketing-and-business-development">
+    <div class="col-9 tabbed-content p-card u-hide" id="marketing-and-business-development">
       <div class="row">
         <div class="col-9">
           <h3>Marketing and Business Development</h3>
@@ -181,8 +179,7 @@
         </div>
       </div>
     </div>
-
-    <div class="col-9 tabbed-content p-card hide" id="operations">
+    <div class="col-9 tabbed-content p-card u-hide" id="operations">
       <div class="row">
         <div class="col-9">
           <h3>Operations</h3>
@@ -217,8 +214,7 @@
         </div>
       </div>
     </div>
-
-    <div class="col-9 tabbed-content p-card" id="professional-services">
+    <div class="col-9 tabbed-content p-card u-hide" id="professional-services">
       <div class="row">
         <div class="col-9">
           <h3>Professional Services</h3>
@@ -308,8 +304,8 @@
               itemId = anchor.hash;
 
               // Hide all items but display this one
-              tabItems.forEach(function(item) {item.classList.add('hide');});
-              document.querySelector(itemId).classList.remove('hide');
+              tabItems.forEach(function(item) {item.classList.add('u-hide');});
+              document.querySelector(itemId).classList.remove('u-hide');
 
               // Deactivate other items and activate this one
               menuAnchors.forEach(function(anchor) {anchor.classList.remove('active');});
