@@ -41,9 +41,7 @@
 <section class="p-strip--light">
   <div class="row">
     <div class="col-8">
-      <ul class="p-list">
-        {% get_rss_feed "http://ldd.tbe.taleo.net/ldd03/ats/servlet/Rss?org=CANONICAL&cws=1&_rss_version=2&CUSTOM_1123=1371" as vacancies %} {% include "_includes/vacancies.html" with vacancies=vacancies %}
-      </ul>
+      {% get_rss_feed "http://ldd.tbe.taleo.net/ldd03/ats/servlet/Rss?org=CANONICAL&cws=1&_rss_version=2&CUSTOM_1123=1371" as vacancies %} {% include "_includes/vacancies.html" with vacancies=vacancies %}
     </div>
   </div>
 </section>

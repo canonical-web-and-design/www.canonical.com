@@ -10,9 +10,7 @@
     <div class="col-8">
       <h1>All current vacancies</h1>
       <p>If you are interested in a role in a specific department or location, you can <a href="https://ldd.tbe.taleo.net/ldd03/ats/careers/jobSearch.jsp?org=CANONICAL&amp;cws=1&amp;rid=86">search jobs</a>.</p>
-      <ul class="p-list">
-        {% get_rss_feed "http://ldd.tbe.taleo.net/ldd03/ats/servlet/Rss?org=CANONICAL&_rss_version=2&cws=1" as vacancies %} {% include "_includes/vacancies.html" with vacancies=vacancies %}
-      </ul>
+      {% get_rss_feed "http://ldd.tbe.taleo.net/ldd03/ats/servlet/Rss?org=CANONICAL&_rss_version=2&cws=1" as vacancies %} {% include "_includes/vacancies.html" with vacancies=vacancies %}
     </div>
   </div>
 </section>
