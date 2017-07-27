@@ -6,7 +6,8 @@
 {% block extra_body_class %}error404{% endblock %}
 
 {% block header %}
-<div class="row no-border hero-box">
+
+<section class="p-strip is-deep">
   <div class="row">
     <div class="col-6">
       <img src="{{ ASSET_SERVER_URL }}18907710-image-404.svg" alt="Error owl" />
@@ -17,5 +18,6 @@
       <p>If you think this is an error on our site, please <a href="https://github.com/ubuntudesign/www.canonical.com/issues/new" class="p-link--external">file a bug</a>.</p>
     </div>
   </div>
-</div>
+</section>
+
 {% endblock %}
