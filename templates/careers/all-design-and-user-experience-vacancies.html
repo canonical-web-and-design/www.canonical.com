@@ -5,17 +5,17 @@
 
 {% block content %}
 
-<div class="p-strip">
+<section class="p-strip is-bordered">
   <div class="row">
     <div class="col-8">
       <h1>All Design and User Experience vacancies</h1>
-      <p>If you are interested in a role in a specific department or location, you can <a href="https://ldd.tbe.taleo.net/ldd03/ats/careers/jobSearch.jsp?org=CANONICAL&cws=1&rid=86">search jobs</a>.</p>
-      <ul class="vacancies list with-total" id="job-feed">
+      <p>If you are interested in a role in a specific department or location, you can <a href="https://ldd.tbe.taleo.net/ldd03/ats/careers/jobSearch.jsp?org=CANONICAL&cws=1&rid=86" class="p-link--external">search jobs</a>.</p>
+      <ul class="p-list">
         {% get_rss_feed "http://ldd.tbe.taleo.net/ldd03/ats/servlet/Rss?org=CANONICAL&cws=1&_rss_version=2&CUSTOM_755=610" as vacancies %} {% include "_includes/vacancies.html" with vacancies=vacancies %}
       </ul>
     </div>
   </div>
-</div>
+</section>
 
 {% include "careers/vacancies_contextual_footer.html" %}
 
