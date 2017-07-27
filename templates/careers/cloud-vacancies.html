@@ -4,50 +4,49 @@
 {% block meta_description %}Current vacancies for Go experts to work in our cloud development teams, primarily on Juju, Ubuntu’s revolutionary service deployment and orchestration tool.{% endblock %}
 
 {% block content %}
-<div class="row row-hero">
-    <div class="row">
-        <div class="col-6">
-            <h1>All cloud vacancies</h1>
-            <p>No other operating system can compete with Ubuntu’s long history of integration with the open cloud – and we are always working to widen that lead. Our cloud teams work on MaaS, our provisioning software, and Juju, our service orchestration tool – not to mention OpenStack itself.
-In short, we’re all about cloud. Are you?</p>
-            <p><a href="https://www.ubuntu.com/cloud" class="p-link--external">More about our cloud products</a></p>
-        </div>
-        <div class="col-6 text-center">
-            <img src="{{ ASSET_SERVER_URL }}fd5d58d0-image-cloudvacancies.svg" width="350" alt="Cloud">
-        </div>
-    </div>
-</div>
 
-<div class="row strip strip-light">
-    <div class="row">
-        <div class="col-4 profile">
-            <img class="portrait" itemprop="image" src="{{ ASSET_SERVER_URL }}4afcf1ef-image-jeff.png" alt="Jeff">
-            <ul class="personal-info">
-                <li class="name" itemprop="name">Jeff</li>
-                <li class="role" itemprop="jobTitle">Server Certification Engineer</li>
-                <li class="location">USA</li>
-            </ul>
-        </div>
-        <div class="col-6">
-            <blockquote class="pull-quote">
-                <p><span>“</span>It’s about the awesome people I get to work with daily and the opportunity to directly affect the direction of Ubuntu.<span>”</span></p>
-            </blockquote>
-            <p>What is your greatest accomplishment at Canonical?</p>
-            <p>Building the Server Certification Programme up from just a concept to a full, self&dash;sustaining programme.  Also designing most of the server test suite and applying that to the cloud.</p>
-        </div>
+<section class="p-strip--light is-deep">
+  <div class="row">
+    <div class="col-6">
+      <h1>All cloud vacancies</h1>
+      <p>No other operating system can compete with Ubuntu’s long history of integration with the open cloud – and we are always working to widen that lead. Our cloud teams work on MaaS, our provisioning software, and Juju, our service orchestration tool – not to mention OpenStack itself. In short, we’re all about cloud. Are you?</p>
+      <p><a href="https://www.ubuntu.com/cloud" class="p-link--external">More about our cloud products</a></p>
     </div>
-</div>
+    <div class="col-6 u-align--center">
+      <img src="{{ ASSET_SERVER_URL }}fd5d58d0-image-cloudvacancies.svg" alt="">
+    </div>
+  </div>
+</section>
 
-<div class="strip row">
-    <div class="row">
-        <div class="col-8">
-            <ul class="vacancies list with-total" id="job-feed">
-                {% get_rss_feed "http://ldd.tbe.taleo.net/ldd03/ats/servlet/Rss?org=CANONICAL&cws=1&_rss_version=2&CUSTOM_1123=1371" as vacancies %}
-                {% include "_includes/vacancies.html" with vacancies=vacancies %}
-            </ul>
-        </div>
+<section class="p-strip">
+  <div class="row">
+    <div class="col-4">
+      <img itemprop="image" src="{{ ASSET_SERVER_URL }}4afcf1ef-image-jeff.png" alt="Jeff">
+      <ul class="p-list">
+        <li class="name" itemprop="name">Jeff</li>
+        <li class="role" itemprop="jobTitle">Server Certification Engineer</li>
+        <li class="location">USA</li>
+      </ul>
     </div>
-</div>
+    <div class="col-8">
+      <blockquote class="p-pull-quote">
+        <p>It’s about the awesome people I get to work with daily and the opportunity to directly affect the direction of Ubuntu.</p>
+      </blockquote>
+      <p><strong>What is your greatest accomplishment at Canonical?</strong></p>
+      <p>Building the Server Certification Programme up from just a concept to a full, self&dash;sustaining programme. Also designing most of the server test suite and applying that to the cloud.</p>
+    </div>
+  </div>
+</section>
+
+<section class="p-strip--light">
+  <div class="row">
+    <div class="col-8">
+      <ul class="p-list">
+        {% get_rss_feed "http://ldd.tbe.taleo.net/ldd03/ats/servlet/Rss?org=CANONICAL&cws=1&_rss_version=2&CUSTOM_1123=1371" as vacancies %} {% include "_includes/vacancies.html" with vacancies=vacancies %}
+      </ul>
+    </div>
+  </div>
+</section>
 
 {% include "careers/vacancies_contextual_footer.html" %}
 
