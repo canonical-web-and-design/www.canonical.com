@@ -1,17 +1,19 @@
-<li class="total">
+<p>
   {% if vacancies %}
-    We currently have {{ vacancies | length }} {{ job_type }} vacancies
+    We currently have {{ vacancies | length }} {{ job_type }} vacancies:
   {% else %}
-    Sorry, we currently have no {{ job_type }} vacancies
+    Sorry, we currently have no {{ job_type }} vacancies.
   {% endif %}
-</li>
+</p>
 
-{% if limit %}
+<ul class="p-list">
+  {% if limit %}
   {% for job in vacancies|slice:limit %}
-    <li><a href="{{ job.link }}">{{ job.title }}&nbsp;&rsaquo;</a></li>
+  <li><a href="{{ job.link }}">{{ job.title }}&nbsp;&rsaquo;</a></li>
   {% endfor %}
-{% else %}
+  {% else %}
   {% for job in vacancies %}
-    <li><a href="{{ job.link }}">{{ job.title }}&nbsp;&rsaquo;</a></li>
+  <li><a href="{{ job.link }}">{{ job.title }}&nbsp;&rsaquo;</a></li>
   {% endfor %}
-{% endif %}
+  {% endif %}
+</ul>
