@@ -4,7 +4,7 @@
   "description": "Django website for canonical.com",
   "main": "index.js",
   "scripts": {
-    "build": "node-sass --include-path node_modules static/sass --output static/css && postcss --use autoprefixer -b 'last 2 versions' < static/css/styles.css | postcss --use cssnano > static/css/styles.min.css",
+    "build": "node-sass --include-path node_modules --include-path static/sass static/sass --output static/css && postcss --use autoprefixer -b 'last 2 versions' < static/css/styles.css | postcss --use cssnano > static/css/styles.min.css",
     "watch": "node-sass --include-path node_modules --source-map true --watch static/sass --output static/css",
     "test": "sass-lint static/**/*.scss --verbose --no-exit",
     "clean": "rm -rf node_modules yarn-error.log static/css"
