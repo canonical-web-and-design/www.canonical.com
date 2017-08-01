@@ -5,7 +5,7 @@
 
 {% block content %}
 
-<div class="p-strip is-bordered">
+<section class="p-strip is-bordered">
   <div class="row">
     <div class="col-8">
       <h1>All Professional Services vacancies</h1>
@@ -13,7 +13,7 @@
       {% get_rss_feed "http://ldd.tbe.taleo.net/ldd03/ats/servlet/Rss?org=CANONICAL&cws=1&_rss_version=2&keywords=professional" as vacancies %} {% include "_includes/vacancies.html" with vacancies=vacancies %}
     </div>
   </div>
-</div>
+</section>
 
 {% include "careers/vacancies_contextual_footer.html" %}
 
