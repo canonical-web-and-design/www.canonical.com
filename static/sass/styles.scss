@@ -4,9 +4,9 @@ $color-brand: #e95420;
 $color-accent: #2c001e;
 $color-link: $color-brand;
 
-// vendor
-@import 'vendor/global-nav/main';
-@import 'vendor/cookie-policy/main';
+// global components
+@import '../components/canonical-global-nav/src/sass/main';
+@import '../components/canonical-cookie-policy/src/sass/cookie-policy';
 
 // import vanilla-brochure-theme
 @import '../../node_modules/vanilla-brochure-theme/scss/theme';
