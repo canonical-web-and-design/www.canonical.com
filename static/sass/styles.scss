@@ -10,7 +10,7 @@ $color-link: $color-brand;
 
 // import vanilla-brochure-theme
 @import '../../node_modules/vanilla-brochure-theme/scss/theme';
-@include vanilla-brochure-theme
+@include vanilla-brochure-theme;
 
 // custom animations lib
 @import 'custom/animations';

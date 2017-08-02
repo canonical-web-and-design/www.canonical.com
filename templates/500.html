@@ -74,10 +74,11 @@
       </nav>
     </div>
   </footer>
-  <!-- cookie policy -->
-  <script src="/static/js/vendor/cookie-policy.js"></script>
+   <!-- cookie policy -->
+  <script async src="{{ STATIC_URL }}components/canonical-cookie-policy/build/js/cookie-policy.js"></script>
+
   <!-- global nav -->
-  <script src="/static/js/vendor/global.js"></script>
+  <script async src="{{ STATIC_URL }}components/canonical-global-nav/build/js/global.js"></script>
   <script>
     // Every page should show the cookie policy until accepted
     var cookie_options = {

@@ -28,6 +28,7 @@ pids
 .bundle/
 node_modules/
 bower_components/
+static/components/
 vendor/
 
 # [build] Built files
