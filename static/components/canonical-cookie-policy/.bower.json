@@ -1,0 +1,29 @@
+{
+  "name": "canonical-cookie-policy",
+  "description": "A script and stylesheet that displays the Canonical cookie policy",
+  "main": "src/js/cookie-policy.js",
+  "authors": [
+    "Anthony Dillon"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/canonical-webteam/cookie-policy",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "version": "1.0.0",
+  "_release": "1.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.0",
+    "commit": "6bf9e3690f58f612f0cfae301984fce11fec9a9e"
+  },
+  "_source": "https://github.com/canonical-webteam/cookie-policy.git",
+  "_target": "^1.0.0",
+  "_originalSource": "canonical-cookie-policy",
+  "_direct": true
+}

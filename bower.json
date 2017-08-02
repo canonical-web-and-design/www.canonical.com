@@ -1,4 +1,3 @@
-
 {
   "name": "canonical-website",
   "description": "Django website for canonical.com",
@@ -22,6 +21,7 @@
     "static/components/"
   ],
   "dependencies": {
-    "canonical-global-nav": "~0.2.0"
+    "canonical-global-nav": "~0.2.0",
+    "canonical-cookie-policy": "^1.0.0"
   }
 }

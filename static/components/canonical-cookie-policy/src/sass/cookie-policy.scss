@@ -1,0 +1,9 @@
+// Vanilla components
+@import 'node_modules/vanilla-framework/scss/vanilla';
+@include vf-u-off-screen;
+
+// Patterns
+@import 'patterns-notification';
+
+// Include all the CSS
+@include cookie-p-notification;
