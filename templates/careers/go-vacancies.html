@@ -5,7 +5,7 @@
 
 {% block content %}
 
-<div class="p-strip--light">
+<section class="p-strip--light">
   <div class="row">
     <div class="col-6">
       <h1>All Go vacancies</h1>
@@ -20,9 +20,9 @@
       <img src="{{ ASSET_SERVER_URL }}e930b8ae-image-govacancies.svg" alt="Golang Gopher">
     </div>
   </div>
-</div>
+</section>
 
-<div class="p-strip">
+<section class="p-strip">
   <div class="row">
     <div class="col-4">
       <img itemprop="image" src="{{ ASSET_SERVER_URL }}87807b55-image-dimiter.png" alt="Dimiter">
@@ -40,15 +40,15 @@
       <p>Definitely my work on Juju &mdash; it&rsquo;s the reason I learned Go. I worked on the library that talks to the OpenStack API, Goose (Go OpenStack Exchange), to help implement OpenStack as a provider in Juju.</p>
     </div>
   </div>
-</div>
+</section>
 
-<div class="p-strip--light">
+<section class="p-strip--light">
   <div class="row">
     <div class="col-8">
       {% get_rss_feed "http://ldd.tbe.taleo.net/ldd03/ats/servlet/Rss?org=CANONICAL&cws=1&_rss_version=2&CUSTOM_1123=1372" as vacancies %} {% include "_includes/vacancies.html" with vacancies=vacancies %}
     </div>
   </div>
-</div>
+</section>
 
 {% include "careers/vacancies_contextual_footer.html" %}
 
