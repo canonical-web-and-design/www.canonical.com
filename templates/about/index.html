@@ -90,7 +90,7 @@
     <div class="col-3">
       <div class="tabbed-menu">
         <ul class="p-list">
-          <li><a href="#mark-shuttleworth">Mark Shuttleworth</a></li>
+          <li><a class="is-active" href="#mark-shuttleworth">Mark Shuttleworth</a></li>
           <li><a href="#anand-krishnan">Anand Krishnan</a></li>
           <li><a href="#mike-bell">Mike Bell</a></li>
           <li><a href="#neil-french">Neil French</a></li>
@@ -630,8 +630,8 @@ function initialize() {
           document.querySelector(itemId).classList.remove('u-hide');
 
           // Deactivate other items and activate this one
-          menuAnchors.forEach(function(anchor) {anchor.classList.remove('active');});
-          anchor.classList.add('active');
+          menuAnchors.forEach(function(anchor) {anchor.classList.remove('is-active');});
+          anchor.classList.add('is-active');
         };
       }(menuAnchors, tabItems)
     );

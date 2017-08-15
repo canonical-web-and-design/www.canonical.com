@@ -33,3 +33,8 @@ $color-link: $color-brand;
     background: $color-mid-light;
   }
 }
+
+// Add font-weight bold to `is-active` state
+.is-active {
+  font-weight: bold;
+}
