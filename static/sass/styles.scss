@@ -20,3 +20,12 @@ $color-link: $color-brand;
 @import 'custom/inline-ubuntu-logo';
 @import 'custom/ubuntu-eco-system-animation';
 @import 'custom/map';
+
+// Highlighting navigation for selected page
+// https://github.com/vanilla-framework/vanilla-framework/issues/1269
+.p-navigation__link {
+
+  &.is-selected {
+    background: $color-mid-light;
+  }
+}
