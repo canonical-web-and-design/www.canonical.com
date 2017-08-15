@@ -25,6 +25,10 @@ $color-link: $color-brand;
 // https://github.com/vanilla-framework/vanilla-framework/issues/1269
 .p-navigation__link {
 
+  &:hover {
+    background: $color-x-light;
+  }
+
   &.is-selected {
     background: $color-mid-light;
   }
