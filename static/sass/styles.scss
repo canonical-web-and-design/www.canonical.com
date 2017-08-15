@@ -9,7 +9,7 @@ $color-link: $color-brand;
 @import '../components/canonical-cookie-policy/build/css/cookie-policy';
 
 // import vanilla-brochure-theme
-@import '../../node_modules/vanilla-brochure-theme/scss/theme';
+@import '../../node_modules/vanilla-framework/scss/build';
 @include vanilla-brochure-theme;
 
 // custom animations lib
