@@ -70,3 +70,23 @@ time {
     margin-top: $sp-medium;
   }
 }
+
+// increase height of /products hero on medium screens
+.products-hero {
+
+  @media (min-width: $breakpoint-medium + 1) {
+    min-height: 450px;
+
+    .content-wrap {
+      margin-top: 3rem;
+    }
+  }
+
+  @media (min-width: $breakpoint-large) {
+    min-height: 500px;
+
+    .content-wrap {
+      margin-top: 2rem;
+    }
+  }
+}
