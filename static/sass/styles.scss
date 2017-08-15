@@ -38,3 +38,8 @@ $color-link: $color-brand;
 .is-active {
   font-weight: bold;
 }
+
+// time elements should be grey
+time {
+  color: $color-mid-dark;
+}
