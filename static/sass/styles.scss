@@ -43,3 +43,30 @@ $color-link: $color-brand;
 time {
   color: $color-mid-dark;
 }
+
+// Update tabbed-content background color-brand
+.tabbed-content {
+  background-color: $color-x-light;
+
+  .p-pull-quote > p {
+    font-size: 1.5rem;
+  }
+}
+
+.tabbed-menu {
+
+  a {
+    color: $color-dark;
+  }
+}
+
+.u-clear {
+  clear: both;
+}
+
+.further-info {
+
+  .p-list--divided {
+    margin-top: $sp-medium;
+  }
+}
