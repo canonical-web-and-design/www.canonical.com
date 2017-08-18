@@ -107,3 +107,15 @@ time {
     }
   }
 }
+
+// Add extra margin-bottom to 'Join us' list grid
+.join-us {
+
+  @media (min-width: $sp-medium) {
+
+    .p-list li:nth-child(odd) {
+      margin-bottom: $sp-x-large;
+    }
+  }
+}
+
