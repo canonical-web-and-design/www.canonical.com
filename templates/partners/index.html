@@ -7,7 +7,7 @@
 
 <section class="p-strip is-deep">
   <div class="row">
-    <div class="col-8">
+    <div class="col-9">
       <h1>We partner with industry leaders</h1>
       <p>At Canonical, we provide the services our partners need to ensure their hardware and software works optimally with the Ubuntu platform. This means working with OEMs, ODMs, ISVs and IHVs, delivering the software and services to complement their core competencies in design, manufacture and distribution. We help our partners deliver their products without the cost and complexity of operating system development, software engineering or global content distribution agreements.</p>
       <p><a href="http://partners.ubuntu.com" class="p-link--external">Learn more on partners.ubuntu.com</a></p>
@@ -15,26 +15,27 @@
   </div>
 </section>
 
-<section class="p-strip--image is-deep" style="min-height: 400px; background-image:url('{{ ASSET_SERVER_URL }}f43b5e66-mwc17-partners-hero.jpg?w=984'); background-position: center;"></section>
+<section class="p-strip--image is-deep" style="min-height: 400px; background-image:url('{{ ASSET_SERVER_URL }}f43b5e66-mwc17-partners-hero.jpg?q=80');
+ background-position: center;"></section>
 
-<section class="p-strip--light is-deep">
+<section class="p-strip--light is-deep is-bordered">
   <div class="row">
     <div class="u-equal-height">
       <div class="col-8">
-      <h2>Ubuntu in the cloud</h2>
-      <p>Ubuntu has been involved in OpenStack since the project began. It is now the world&rsquo;s most popular choice of operating system for production OpenStack clouds, with over 60% of deployments running Ubuntu.</p>
-      <p>Building a cloud is not a &ldquo;one size fits all&rdquo; endeavour. Telcos and enterprises deploying OpenStack want to select technology components which meet their architecture and procurement requirements. We work with the leading cloud technology providers to ensure that their hardware and software is compatible with Ubuntu and OpenStack, thereby creating the most reliable and agile cloud architecture for users. </p>
-      <p>We also certify Ubuntu as a guest OS on public clouds. Our Certified Public Cloud program gives public cloud providers an optimised Ubuntu image to offer on their platforms, and includes options for Canonical support agreements for the cloud users. It&rsquo;s a complete package which provides a consistent, reliable Ubuntu experience to public cloud users.</p>
-      <p><a href="http://partners.ubuntu.com/find-a-partner?Technology=Cloud/server" class="p-link--external">Browse all cloud partners</a></p>
-    </div>
-      <div class="col-4 u-vertically-center">
-      <img src="{{ ASSET_SERVER_URL }}845e046c-partner-openstack.png?w=250" alt="" />
-    </div>
+        <h2>Ubuntu in the cloud</h2>
+        <p>Ubuntu has been involved in OpenStack since the project began. It is now the world&rsquo;s most popular choice of operating system for production OpenStack clouds, with over 60% of deployments running Ubuntu.</p>
+        <p>Building a cloud is not a &ldquo;one size fits all&rdquo; endeavour. Telcos and enterprises deploying OpenStack want to select technology components which meet their architecture and procurement requirements. We work with the leading cloud technology providers to ensure that their hardware and software is compatible with Ubuntu and OpenStack, thereby creating the most reliable and agile cloud architecture for users. </p>
+        <p>We also certify Ubuntu as a guest OS on public clouds. Our Certified Public Cloud program gives public cloud providers an optimised Ubuntu image to offer on their platforms, and includes options for Canonical support agreements for the cloud users. It&rsquo;s a complete package which provides a consistent, reliable Ubuntu experience to public cloud users.</p>
+        <p><a href="http://partners.ubuntu.com/find-a-partner?Technology=Cloud/server" class="p-link--external">Browse all cloud partners</a></p>
+      </div>
+      <div class="col-4 u-vertically-center u-align--center">
+        <img src="{{ ASSET_SERVER_URL }}623e36f9-OpenStack_Logo_Mark+%281%29.svg" alt="" />
+      </div>
     </div>
   </div>
 </section>
 
-<section class="p-strip is-deep">
+<section class="p-strip is-deep is-bordered u-align--center">
   <div class="row">
       <h2 class="p-muted-heading">A selection of our cloud partners</h2>
       {% get_json_feed "http://partners.ubuntu.com/partners.json?technology__name=Cloud/server&featured=true" limit=10 as cloud_partners %}
@@ -63,7 +64,7 @@
   </div>
 </section>
 
-<section class="p-strip--light">
+<section class="p-strip--light is-bordered">
   <div class="row">
     <div class="u-equal-height">
       <div class="col-6 u-vertically-center">
@@ -79,7 +80,7 @@
 </section>
 
 
-<section class="p-strip">
+<section class="p-strip u-align--center">
   <div class="row">
     <div class="panel panel--alt col-12">
       <h2 class="p-muted-heading">A selection of our IoT device and PC partners</h2>
@@ -92,49 +93,68 @@
           </li>
         {% endfor %}
       </ul>
-      <p class="u-align--center"><a href="http://partners.ubuntu.com/find-a-partner?technology=personal-computing/devices" class="p-link--external">Browse all IoT device and PC partners</a></p>
+      <p><a href="http://partners.ubuntu.com/find-a-partner?technology=personal-computing/devices" class="p-link--external">Browse all IoT device and PC partners</a></p>
     </div>
   </div>
 </section>
 
-<div class="p-strip--accent">
+<div class="p-strip--accent is-shallow u-no-padding--bottom">
   <div class="row">
     <div class="col-7">
       <h2>How we work with our partners</h2>
       <p>By formalising their partnership with Canonical, hardware makers, ISVs, cloud providers and mobile carriers can realise a wealth of benefits.</p>
-      <p><a href="/partners/contact-us">Talk to us about becoming a partner&nbsp;&rsaquo;</a></p>
-      <ul class="p-list">
-      <li>
-        <img src="{{ ASSET_SERVER_URL }}6c5962c1-icon-favourite.svg" alt="" />
-        <p>Certification of products to ensure the quality and consistency of experience.</p>
-      </li>
-      <li>
-        <img src="{{ ASSET_SERVER_URL }}0948d424-icon-ubuntu.svg" alt="" />
-        <p>The opportunity to help shape the world&rsquo;s favourite open source operating system.</p>
-      </li>
-      <li>
-        <img src="{{ ASSET_SERVER_URL }}588e9b50-icon-security.svg" alt="" />
-        <p>Security and critical bug fixes to the base platform offering.</p>
-      </li>
-      <li>
-        <img src="{{ ASSET_SERVER_URL }}54f322b7-icon-updates.svg" alt="" />
-        <p>Infrastructure to support your update management strategy.</p>
-      </li>
-      <li>
-        <img src="{{ ASSET_SERVER_URL }}593b4741-icon-money.svg" alt="" />
-        <p>Third party licence fees  and subscriptions, royalty collection fees and regulatory broadcast fees.</p>
-      </li>
-      <li>
-        <img src="{{ ASSET_SERVER_URL }}a0ed0aa0-icon-engineering.svg" alt="" />
-        <p>Custom engineering covering component and system enablement, certification and platform customisation.</p>
-      </li>
-    </ul>
+      <p><a class="p-link--inverted" href="/partners/contact-us">Talk to us about becoming a partner&nbsp;&rsaquo;</a></p>
     </div>
-
   </div>
 </div>
 
-<section class="p-strip">
+<div class="p-strip--accent is-shallow">
+  <div class="row">
+    <div class="col-3">
+      <p>
+        <img width="48" src="{{ ASSET_SERVER_URL }}6c5962c1-icon-favourite.svg" alt="" />
+      </p>
+      <p>Certification of products to ensure the quality and consistency of experience.</p>
+    </div>
+    <div class="col-3">
+      <p>
+        <img width="48" src="{{ ASSET_SERVER_URL }}0948d424-icon-ubuntu.svg" alt="" />
+      </p>
+      <p>The opportunity to help shape the world&rsquo;s favourite open source operating system.</p>
+    </div>
+    <div class="col-3">
+      <p>
+        <img width="48" src="{{ ASSET_SERVER_URL }}588e9b50-icon-security.svg" alt="" />
+      </p>
+      <p>Security and critical bug fixes to the base platform offering.</p>
+    </div>
+    <div class="col-3">
+      <p>
+        <img width="48" src="{{ ASSET_SERVER_URL }}54f322b7-icon-updates.svg" alt="" />
+      </p>
+      <p>Infrastructure to support your update management strategy.</p>
+    </div>
+  </div>
+</div>
+
+<div class="p-strip--accent u-no-padding--top">
+  <div class="row">
+    <div class="col-3">
+      <p>
+        <img width="48" src="{{ ASSET_SERVER_URL }}593b4741-icon-money.svg" alt="" />
+      </p>
+      <p>Third party licence fees  and subscriptions, royalty collection fees and regulatory broadcast fees.</p>
+    </div>
+    <div class="col-3">
+      <p>
+        <img width="48" src="{{ ASSET_SERVER_URL }}a0ed0aa0-icon-engineering.svg" alt="" />
+      </p>
+      <p>Custom engineering covering component and system enablement, certification and platform customisation.</p>
+    </div>
+  </div>
+</div>
+
+<section class="p-strip is-bordered">
   <div class="row p-divider">
     <div class="col-6 p-divider__block">
       <div class="u-equal-height">
@@ -142,7 +162,7 @@
         <h3><a href="/partners/contact-us">Contact us about becoming a partner&nbsp;&rsaquo;</a></h3>
         <p>Interested in becoming a partner? Talk to us today for more information about our services and certification.</p>
       </div>
-        <div class="col-2 u-vertically-center">
+        <div class="col-2 u-vertically-center u-hide u-visible--large">
         <img src="{{ ASSET_SERVER_URL }}fe022948-image-footer-certification.svg" alt="">
       </div>
       </div>
@@ -157,4 +177,7 @@
     </div>
   </div>
 </section>
+
+{% include "_includes/extended-footer.html" %}
+
 {% endblock content %}
