@@ -2,7 +2,6 @@
 
 $color-brand: #e95420;
 $color-accent: #2c001e;
-$color-link: $color-brand;
 
 // global components
 @import '../components/canonical-global-nav/build/css/main';
@@ -20,6 +19,12 @@ $color-link: $color-brand;
 @import 'custom/inline-ubuntu-logo';
 @import 'custom/ubuntu-eco-system-animation';
 @import 'custom/map';
+
+// Fix .p-link--external color
+// https://github.com/vanilla-framework/vanilla-framework/issues/1274
+.p-strip .p-link--external {
+  color: $color-link;
+}
 
 // Highlighting navigation for selected page
 // https://github.com/vanilla-framework/vanilla-framework/issues/1269
@@ -68,5 +73,25 @@ time {
 
   .p-list--divided {
     margin-top: $sp-medium;
+  }
+}
+
+// increase height of /products hero on medium screens
+.products-hero {
+
+  @media (min-width: $breakpoint-medium + 1) {
+    min-height: 450px;
+
+    .content-wrap {
+      margin-top: 3rem;
+    }
+  }
+
+  @media (min-width: $breakpoint-large) {
+    min-height: 500px;
+
+    .content-wrap {
+      margin-top: 2rem;
+    }
   }
 }
