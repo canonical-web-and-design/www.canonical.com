@@ -58,6 +58,7 @@ time {
   }
 }
 
+// Tabbed menu items should be dark
 .tabbed-menu {
 
   a {
@@ -65,14 +66,25 @@ time {
   }
 }
 
+// Util for clearing
 .u-clear {
   clear: both;
 }
 
+// Custom margin-top spacing
 .further-info {
 
   .p-list--divided {
     margin-top: $sp-medium;
+  }
+}
+
+// Temp fix for .p-heading-icon bug
+// https://github.com/vanilla-framework/vanilla-framework/issues/1272
+.p-strip--accent {
+
+  .p-heading-icon {
+    color: inherit;
   }
 }
 
@@ -95,3 +107,15 @@ time {
     }
   }
 }
+
+// Add extra margin-bottom to 'Join us' list grid
+.join-us {
+
+  @media (min-width: $sp-medium) {
+
+    .p-list li:nth-child(odd) {
+      margin-bottom: $sp-x-large;
+    }
+  }
+}
+
