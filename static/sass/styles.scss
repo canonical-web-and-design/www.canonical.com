@@ -126,3 +126,9 @@ time {
   overflow-y: hidden;
   margin: 2.5rem 0;
 }
+
+// p-card--foter needs margin-top
+// https://github.com/vanilla-framework/vanilla-framework/issues/1277
+.p-card .p-card__footer {
+  margin-top: $sp-medium;
+}
