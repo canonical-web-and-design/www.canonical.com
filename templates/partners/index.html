@@ -15,7 +15,8 @@
   </div>
 </section>
 
-<section class="p-strip--image is-deep" style="min-height: 400px; background-image:url('{{ ASSET_SERVER_URL }}f43b5e66-mwc17-partners-hero.jpg?w=984'); background-position: center;"></section>
+<section class="p-strip--image is-deep" style="min-height: 400px; background-image:url('{{ ASSET_SERVER_URL }}f43b5e66-mwc17-partners-hero.jpg?q=80');
+ background-position: center;"></section>
 
 <section class="p-strip--light is-deep is-bordered">
   <div class="row">
@@ -28,13 +29,13 @@
         <p><a href="http://partners.ubuntu.com/find-a-partner?Technology=Cloud/server" class="p-link--external">Browse all cloud partners</a></p>
       </div>
       <div class="col-4 u-vertically-center u-align--center">
-        <img src="{{ ASSET_SERVER_URL }}845e046c-partner-openstack.png?w=250" alt="" />
+        <img src="{{ ASSET_SERVER_URL }}623e36f9-OpenStack_Logo_Mark+%281%29.svg" alt="" />
       </div>
     </div>
   </div>
 </section>
 
-<section class="p-strip is-deep is-bordered">
+<section class="p-strip is-deep is-bordered u-align--center">
   <div class="row">
       <h2 class="p-muted-heading">A selection of our cloud partners</h2>
       {% get_json_feed "http://partners.ubuntu.com/partners.json?technology__name=Cloud/server&featured=true" limit=10 as cloud_partners %}
@@ -79,7 +80,7 @@
 </section>
 
 
-<section class="p-strip">
+<section class="p-strip u-align--center">
   <div class="row">
     <div class="panel panel--alt col-12">
       <h2 class="p-muted-heading">A selection of our IoT device and PC partners</h2>
@@ -92,7 +93,7 @@
           </li>
         {% endfor %}
       </ul>
-      <p class="u-align--center"><a href="http://partners.ubuntu.com/find-a-partner?technology=personal-computing/devices" class="p-link--external">Browse all IoT device and PC partners</a></p>
+      <p><a href="http://partners.ubuntu.com/find-a-partner?technology=personal-computing/devices" class="p-link--external">Browse all IoT device and PC partners</a></p>
     </div>
   </div>
 </section>
