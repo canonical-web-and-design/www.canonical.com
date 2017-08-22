@@ -1,9 +1,14 @@
-{% for item in items %}
+{% if items is False %}
+  <li class="p-list__item">
+    <p>Feed failed to load. If you have time, please <a href="https://github.com/canonical-websites/www.canonical.com/issues/new">file an issue</a>.</p>
+  </li>
+{% else %}
+  {% for item in items %}
   <li class="p-list__item">
     <a href="{{ item.link }}">{{ item.title }}</a><br />
     <small>
       {% if item.type == "resource" %}
-      {{ item.category }}
+        {{ item.category }}
       {% else %}
       <time pubdate datetime="{{ item.updated_datetime | date:'c' }}">
         {{ item.updated_datetime | date:"j F Y" }}
@@ -11,4 +16,5 @@
       {% endif %}
     </small><br />
   </li>
-{% endfor %}
+  {% endfor %}
+{% endif %}
