@@ -1,10 +1,14 @@
-{% if vacancies %}
-  <p>We currently have {{ vacancies | length }} {{ job_type }} vacancies:</p>
+{% if vacancies is False %}
+  <p class="u-no-margin--bottom">Feed failed to load. If you have time, please <a href="https://github.com/canonical-websites/www.canonical.com/issues/new">file an issue</a>.</p>
 {% else %}
-  <p class="u-no-margin--bottom">Sorry, we currently have no {{ job_type }} vacancies.</p>
-{% endif %}
+  <p>
+    {% if vacancies %}
+      We currently have {{ vacancies | length }} {{ job_type }} vacancies:
+    {% else %}
+      Sorry, we currently have no {{ job_type }} vacancies.
+    {% endif %}
+  </p>
 
-{% if vacancies %}
   <ul class="p-list--divided">
     {% if limit %}
       {% for job in vacancies|slice:limit %}
