@@ -39,6 +39,10 @@ $color-accent: #2c001e;
   }
 }
 
+.p-navigation__logo .p-navigation__link:hover {
+  background: none;
+}
+
 // Add font-weight bold to `is-active` state
 .is-active {
   font-weight: bold;
@@ -122,9 +126,9 @@ time {
 
 // Add a table wrapper to allow x-scrolling
 .table__wrapper {
+  margin: 2.5rem 0;
   overflow-x: auto;
   overflow-y: hidden;
-  margin: 2.5rem 0;
 }
 
 // p-card--footer needs margin-top
