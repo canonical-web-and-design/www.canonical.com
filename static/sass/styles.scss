@@ -122,9 +122,9 @@ time {
 
 // Add a table wrapper to allow x-scrolling
 .table__wrapper {
+  margin: 2.5rem 0;
   overflow-x: auto;
   overflow-y: hidden;
-  margin: 2.5rem 0;
 }
 
 // p-card--footer needs margin-top
