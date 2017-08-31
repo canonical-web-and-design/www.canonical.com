@@ -39,6 +39,10 @@ $color-accent: #2c001e;
   }
 }
 
+.p-navigation__logo .p-navigation__link:hover {
+  background: none;
+}
+
 // Add font-weight bold to `is-active` state
 .is-active {
   font-weight: bold;
