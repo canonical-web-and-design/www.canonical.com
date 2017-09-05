@@ -38,6 +38,10 @@
     margin-top: -20px;
     width: 538px;
 
+    * {
+      margin-top: 0;
+    }
+
     .background {
       background-size: 80%;
       background: url('https://assets.ubuntu.com/v1/1580f686-light-beams.png') no-repeat scroll center center;
