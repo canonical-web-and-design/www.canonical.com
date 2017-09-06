@@ -22,6 +22,6 @@
   ],
   "dependencies": {
     "canonical-global-nav": "^0.2.0",
-    "canonical-cookie-policy": "^1.0.1"
+    "canonical-cookie-policy": "^1.0.2"
   }
 }
