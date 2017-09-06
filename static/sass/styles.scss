@@ -8,8 +8,7 @@ $color-accent: #2c001e;
 @import '../components/canonical-cookie-policy/build/css/cookie-policy';
 
 // import vanilla-brochure-theme
-@import '../../node_modules/vanilla-framework/scss/build';
-@include vanilla-brochure-theme;
+@import 'node_modules/vanilla-framework/scss/build';
 
 // custom animations lib
 @import 'custom/animations';

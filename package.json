@@ -22,6 +22,6 @@
     "postcss": "^6.0.8",
     "postcss-cli": "^4.1.0",
     "sass-lint": "^1.10.2",
-    "vanilla-framework": "1.4.3"
+    "vanilla-framework": "1.5.1"
   }
 }
