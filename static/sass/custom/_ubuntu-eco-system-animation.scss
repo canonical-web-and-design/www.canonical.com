@@ -71,6 +71,7 @@
   .products-hero-cloud {
     animation: scaleInPop 0.2s forwards, fadeIn 0.2s linear forwards;
     height: 66px;
+    margin-top: 0;
     opacity: 0;
     position: absolute;
     width: 66px;
@@ -127,6 +128,7 @@
   .products-hero-line-4,
   .products-hero-line-5 {
     animation: fadeIn .3s linear forwards;
+    margin-top: 0;
     opacity: 0;
     position: absolute;
   }
