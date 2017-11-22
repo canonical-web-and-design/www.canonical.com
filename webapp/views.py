@@ -20,6 +20,9 @@ class CanonicalTemplateFinder(TemplateFinder):
             **kwargs
         )
 
+        # Add job role
+        context['job_id'] = self.request.GET.get('job_id')
+
         # Add level_* context variables
         clean_path = self.request.path.strip('/')
         for index, path, in enumerate(clean_path.split('/')):
