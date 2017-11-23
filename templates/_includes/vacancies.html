@@ -18,7 +18,8 @@
       {% endfor %}
     {% else %}
       {% for job in jobs.jobs %}
-        <li class="p-list__item"><a href="{{ job.absolute_url }}">{{ job.title }} - {{ job.metadata.0.value }} &nbsp;&rsaquo;</a></li>
+        <li class="p-list__item"><a href="{{ job.absolute_url }}">{{ job.title }} - {{ job.metadata.0.value }}&nbsp;&rsaquo;</a><br />
+        <em>{{ job.location.name }}</em></li>
       {% endfor %}
     {% endif %}
   </ul>
