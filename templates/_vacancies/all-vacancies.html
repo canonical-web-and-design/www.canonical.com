@@ -8,17 +8,36 @@
 {% endblock %}
 
 {% block content %}
+<section class="p-strip--light">
+  <div class="row">
+    <div class="col-8">
+      <h1>All current vacancies</h1>
 
+      {% if jobs is False %}
+        <p class="u-no-margin--bottom">Feed failed to load. If you have time, please <a href="https://github.com/canonical-websites/www.canonical.com/issues/new">file an issue</a>.</p>
+      {% else %}
+        <p>
+          {% if jobs.items %}
+            We currently have {{ job_count }} {{ job_type }} vacancies:
+          {% else %}
+            Sorry, we currently have no {{ job_type }} vacancies.
+          {% endif %}
+        </p>
 
-  <ul>
-      {% for department, department_jobs in jobs.items %}
-        <li>{{ department }}</li>
-        {% for job in department_jobs %}
-          <li class="p-list__item"><a href="{{ job.url }}">{{ job.title }} &nbsp;&rsaquo;</a></li>
+        {% for department, department_jobs in jobs.items %}
+          <h2 class="p-heading--three">{{ department }}</h2>
+          <ul class="p-list--divided">
+            {% for job in department_jobs %}
+              <li class="p-list__item"><a class="p-link--external" href="{{ job.url }}">{{ job.title }}  - <em>{{ job.location.name }}</em></a></li>
+            {% endfor %}
+          </ul>
         {% endfor %}
-      {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</section>
 
-  </ul>
+{% include "careers/vacancies_contextual_footer.html" %}
 
 {% endblock content %}
 

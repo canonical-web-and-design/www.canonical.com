@@ -1,16 +1,43 @@
 {% extends "careers/base_careers.html" %}
 
-{% block title %}Canonical | Careers | All current vacancies{% endblock %}
-{% block meta_description %}If you’re interested in open source software, the cloud or devices, Canonical is an incredible place to work. Whether you’re a technologist, a designer or a business professional, opportunities exist to work from home or at one of our key offices around the world.{% endblock %}
+{% block title %}Canonical | Careers{% endblock %}
+{% block meta_description %}For anyone interested in open source software and Ubuntu in particular, Canonical is an incredible place to work. Whether you’re a technologist, a designer or a business professional, opportunities exist to work from home or at one of our five key offices around the world. {% endblock %}
+{% block head_extra %}
+  <script src="{{ ASSET_SERVER_URL }}5d7e5bbf-jquery-2.2.0.min.js"></script>
+  <script src="{{ ASSET_SERVER_URL }}c954db4a-jfeed_prm.js"></script>
+{% endblock %}
 
 {% block content %}
-
 <section class="p-strip--light">
   <div class="row">
     <div class="col-8">
       <h1>All current vacancies</h1>
-      {% get_raw_json_feed "https://api.greenhouse.io/v1/boards/Canonical/jobs" as jobs %}
-      {% include "_includes/vacancies.html" with jobs=jobs %}
+
+      {% if jobs is False %}
+        <p class="u-no-margin--bottom">Feed failed to load. If you have time, please <a href="https://github.com/canonical-websites/www.canonical.com/issues/new">file an issue</a>.</p>
+      {% else %}
+        <p>
+          {% if jobs.items %}
+            We currently have {{ job_count }} {{ job_type }} vacancies:
+          {% else %}
+            Sorry, we currently have no {{ job_type }} vacancies.
+          {% endif %}
+        </p>
+
+        {% for department, department_jobs in jobs.items %}
+          <h2 class="p-heading--three">{{ department }}</h2>
+          <ul class="p-list--divided">
+            {% for job in department_jobs %}
+              <li class="p-list__item">
+                <a
+                class="p-link--external"
+                target="_blank"
+                href="{{ job.url }}">{{ job.title }}  - <em>{{ job.location.name }}</em></a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endfor %}
+      {% endif %}
     </div>
   </div>
 </section>
@@ -18,3 +45,6 @@
 {% include "careers/vacancies_contextual_footer.html" %}
 
 {% endblock content %}
+
+{% block footer_extra %}
+{% endblock footer_extra %}
