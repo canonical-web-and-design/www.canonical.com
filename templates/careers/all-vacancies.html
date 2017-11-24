@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block content %}
-<section class="p-strip">
+<section class="p-strip--light">
   <div class="row">
     <div class="col-8">
       <h1>All current vacancies</h1>
@@ -22,7 +22,16 @@
             Sorry, we currently have no {{ job_type }} vacancies.
           {% endif %}
         </p>
+      </div>
+      <div class="col-4">
+        <img src="{{ ASSET_SERVER_URL }}5099cfac-image-footer-search.svg" alt="">
+      </div>
+    </div>
+  </section>
 
+  <section class="p-strip">
+    <div class="row">
+      <div class="col-8">
         {% for department, department_jobs in jobs.items %}
           <h2 class="p-heading--three p-link--external"><span style="color: #111111;">{{ department }}</span></h2>
           <ul class="p-list--divided">
