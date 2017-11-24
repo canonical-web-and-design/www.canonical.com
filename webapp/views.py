@@ -29,9 +29,6 @@ class GreenhouseVacancies(TemplateView):
                 'url': job['absolute_url'],
                 'location': job['location'],
             })
-        import pprint
-        pprint.pprint(job_departments)
-        pprint.pprint(job_count)
         return job_departments, job_count
 
     def get_context_data(self, **kwargs):
