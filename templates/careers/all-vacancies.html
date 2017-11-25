@@ -3,17 +3,19 @@
 {% block title %}Canonical | Careers{% endblock %}
 {% block meta_description %}For anyone interested in open source software and Ubuntu in particular, Canonical is an incredible place to work. Whether you’re a technologist, a designer or a business professional, opportunities exist to work from home or at one of our five key offices around the world. {% endblock %}
 {% block head_extra %}
-  <script src="{{ ASSET_SERVER_URL }}5d7e5bbf-jquery-2.2.0.min.js"></script>
-  <script src="{{ ASSET_SERVER_URL }}c954db4a-jfeed_prm.js"></script>
 {% endblock %}
 
 {% block content %}
-<section class="p-strip--image is-dark">
+<section class="p-strip--accent is-dark">
   <div class="row">
     <div class="col-8">
       <h1>All current vacancies</h1>
       {% if jobs is False %}
-        <p class="u-no-margin--bottom">Feed failed to load. If you have time, please <a href="https://github.com/canonical-websites/www.canonical.com/issues/new">file an issue</a>.</p>
+      <div class="p-notification--negative">
+        <p class="p-notification__response">
+          <span class="p-notification__status">Error:</span>Feed failed to load. If you have time, please <a href="https://github.com/canonical-websites/www.canonical.com/issues/new">file an issue</a>.
+        </p>
+      </div>
       {% else %}
         <p>
           {% if jobs.items %}
