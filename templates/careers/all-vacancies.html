@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block content %}
-<section class="p-strip--light">
+<section class="p-strip--image is-dark">
   <div class="row">
     <div class="col-8">
       <h1>All current vacancies</h1>
@@ -33,7 +33,7 @@
     <div class="row">
       <div class="col-8">
         {% for department, department_jobs in jobs.items %}
-          <h2 class="p-heading--three p-link--external"><span style="color: #111111;">{{ department }}</span></h2>
+          <h2 class="p-heading--four p-link--external" style="margin-top: 1rem;"><span style="color: #111111;">{{ department }}</span></h2>
           <ul class="p-list--divided">
             {% for job in department_jobs %}
               <li class="p-list__item">
