@@ -14,6 +14,8 @@ class GreenhouseVacancies(TemplateView):
         feed = get_raw_json_feed(
             'https://api.greenhouse.io/v1/boards/Canonical/jobs'
         )
+        if feed is False:
+            return False,0
 
         job_departments = {}
         job_count = 0

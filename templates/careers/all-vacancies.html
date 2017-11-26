@@ -10,13 +10,7 @@
   <div class="row">
     <div class="col-8">
       <h1>All current vacancies</h1>
-      {% if jobs is False %}
-      <div class="p-notification--negative">
-        <p class="p-notification__response">
-          <span class="p-notification__status">Error:</span>Feed failed to load. If you have time, please <a href="https://github.com/canonical-websites/www.canonical.com/issues/new">file an issue</a>.
-        </p>
-      </div>
-      {% else %}
+      {% if jobs %}
         <p>
           {% if jobs.items %}
             We currently have {{ job_count }} vacancies:
@@ -24,6 +18,7 @@
             Sorry, we currently have no {{ job_type }} vacancies.
           {% endif %}
         </p>
+        {% endif %}
       </div>
       <div class="col-4">
         <img src="{{ ASSET_SERVER_URL }}5099cfac-image-footer-search.svg" alt="">
@@ -31,9 +26,16 @@
     </div>
   </section>
 
-  <section class="p-strip">
-    <div class="row">
-      <div class="col-8">
+<section class="p-strip">
+  <div class="row">
+    <div class="col-8">
+      {% if jobs is False %}
+        <div class="p-notification--negative">
+          <p class="p-notification__response">
+            <span class="p-notification__status">Error:</span>Feed failed to load. If you have time, please <a href="https://github.com/canonical-websites/www.canonical.com/issues/new">file an issue</a>.
+          </p>
+        </div>
+      {% else %}
         {% for department, department_jobs in jobs.items %}
           <h2 class="p-heading--four p-link--external" style="margin-top: 1rem;"><span style="color: #111111;">{{ department }}</span></h2>
           <ul class="p-list--divided">
