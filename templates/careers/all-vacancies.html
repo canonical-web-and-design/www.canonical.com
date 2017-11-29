@@ -13,7 +13,7 @@
       {% if jobs %}
         <p>
           {% if jobs.items %}
-            We currently have {{ job_count }} vacancies:
+            We currently have {{ job_count }} vacancies.
           {% else %}
             Sorry, we currently have no {{ job_type }} vacancies.
           {% endif %}
@@ -37,8 +37,8 @@
         </div>
       {% else %}
         {% for department, department_jobs in jobs.items %}
-          <h2 class="p-heading--four p-link--external" style="margin-top: 1rem;"><span style="color: #111111;">{{ department }}</span></h2>
-          <ul class="p-list--divided">
+          <h2 class="p-heading--four p-link--external"><span style="color: #111111;">{{ department }}</span></h2>
+          <ul class="p-list--divided" style="margin-top: 1rem;">
             {% for job in department_jobs %}
               <li class="p-list__item">
                 <a
