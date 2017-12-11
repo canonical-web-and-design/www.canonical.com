@@ -18,6 +18,8 @@ $color-accent: #2c001e;
 @import 'custom/inline-ubuntu-logo';
 @import 'custom/ubuntu-eco-system-animation';
 @import 'custom/map';
+@import 'pattern_link';
+@include canonical-p-link;
 
 // Add font-weight bold to `is-active` state
 .is-active {
