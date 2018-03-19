@@ -12,7 +12,7 @@
   <link type="text/plain" rel="author" href="/static/files/humans.txt" />
   <!-- google fonts -->
   <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,700,700italic|Ubuntu+Mono" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" type="text/css" media="screen" href="/static/css/styles.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}minified/styles.css" />
 </head>
   <body itemscope itemtype="http://schema.org/Product">
   <header id="navigation" class="p-navigation--light" role="banner">
@@ -75,10 +75,10 @@
     </div>
   </footer>
    <!-- cookie policy -->
-  <script async src="{{ STATIC_URL }}components/canonical-cookie-policy/build/js/cookie-policy.js"></script>
+  <script src="{{ STATIC_URL }}js/modules/cookie-policy.js"></script>
 
   <!-- global nav -->
-  <script async src="{{ STATIC_URL }}components/canonical-global-nav/build/js/global.js"></script>
+  <script src="{{ STATIC_URL }}js/modules/global.js"></script>
   <script>
     // Every page should show the cookie policy until accepted
     var cookie_options = {
