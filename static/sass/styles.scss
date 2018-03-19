@@ -4,8 +4,8 @@ $color-brand: #e95420;
 $color-accent: #2c001e;
 
 // global components
-@import '../components/canonical-global-nav/build/css/main';
-@import '../components/canonical-cookie-policy/build/css/cookie-policy';
+@import 'modules/main';
+@import 'modules/cookie-policy';
 
 // import vanilla-brochure-theme
 @import 'vanilla-framework/scss/build';

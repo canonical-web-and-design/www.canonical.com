@@ -15,4 +15,3 @@ from django.core.wsgi import get_wsgi_application  # noqa
 from whitenoise.django import DjangoWhiteNoise  # noqa
 
 application = DjangoWhiteNoise(get_wsgi_application())
-
