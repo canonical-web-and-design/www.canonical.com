@@ -115,3 +115,7 @@ time {
   }
 }
 
+// Override max-width on `p` tags
+.u-no-max-width {
+  max-width: 100%;
+}
