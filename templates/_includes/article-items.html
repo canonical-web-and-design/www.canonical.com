@@ -5,13 +5,13 @@
 {% else %}
   {% for item in items %}
   <li class="p-list__item">
-    <a href="{{ item.link }}">{{ item.title }}</a><br />
+    <a href="{{ item.link | replace_admin }}">{{ item.title.rendered | replace_encoded_endash }}</a><br />
     <small>
       {% if item.type == "resource" %}
         {{ item.category }}
       {% else %}
       <time pubdate datetime="{{ item.updated_datetime | date:'c' }}">
-        {{ item.updated_datetime | date:"j F Y" }}
+        {{ item.date | format_date }}
       </time>
       {% endif %}
     </small><br />

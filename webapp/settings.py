@@ -53,6 +53,8 @@ TEMPLATES = [
             'builtins': [
                 'canonicalwebteam.get_feeds.templatetags',
                 'webapp.templatetags.raw_feeds',
+                'webapp.templatetags.utils',
+
             ],
             'context_processors': [
                 'django.template.context_processors.static',
