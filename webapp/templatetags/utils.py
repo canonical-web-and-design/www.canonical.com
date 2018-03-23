@@ -14,8 +14,3 @@ def format_date(date):
 @register.filter
 def replace_admin(url):
     return url.replace("admin.insights.ubuntu.com", "insights.ubuntu.com")
-
-
-@register.filter
-def replace_encoded_endash(str):
-    return str.replace("&#8211;", "–")

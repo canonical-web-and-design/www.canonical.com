@@ -5,7 +5,7 @@
 {% else %}
   {% for item in items %}
   <li class="p-list__item">
-    <a href="{{ item.link | replace_admin }}">{{ item.title.rendered | replace_encoded_endash }}</a><br />
+    <a href="{{ item.link | replace_admin }}">{{ item.title.rendered | safe }}</a><br />
     <small>
       {% if item.type == "resource" %}
         {{ item.category }}
