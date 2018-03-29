@@ -1,6 +1,7 @@
 """
 Django views for www.canonical.com.
 """
+from django.conf import settings
 from django.views.generic.base import TemplateView
 from django_template_finder_view import TemplateFinder
 
@@ -12,7 +13,8 @@ class GreenhouseVacancies(TemplateView):
 
     def get_vacancies(self):
         feed = get_raw_json_feed(
-            'https://api.greenhouse.io/v1/boards/Canonical/jobs'
+            'https://api.greenhouse.io/v1/boards/Canonical/jobs',
+            proxy='http://squid.internal:3128' if not settings.DEBUG else None,
         )
         if feed is False:
             return False, 0
