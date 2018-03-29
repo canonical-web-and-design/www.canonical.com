@@ -17,13 +17,24 @@ register = template.Library()
 
 
 @register.simple_tag
-def get_raw_json_feed(url):
+def get_raw_json_feed(url, proxy=None):
     """
     Get the entries in a JSON feed
     """
 
+    proxies = {}
+    if proxy:
+        proxies = {
+            'http': proxy,
+            'https': proxy,
+        }
+
     try:
-        response = cached_request.get(url, timeout=requests_timeout)
+        response = cached_request.get(
+            url,
+            timeout=requests_timeout,
+            proxies=proxies,
+        )
         response.raise_for_status()
     except Exception as request_error:
         logger.warning(
