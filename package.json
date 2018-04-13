@@ -26,7 +26,11 @@
     "postcss": "^6.0.8",
     "postcss-cli": "^4.1.0",
     "sass-lint": "^1.10.2",
+<<<<<<< 84c9b91f79a6e24ded4ea2848eb75957ab014bd9
     "vanilla-framework": "1.6.7"
+=======
+    "vanilla-framework": "1.7.0-beta-1"
+>>>>>>> Update to Vanilla 1.7.0-beta-1
   },
   "dependencies": {
     "global-nav": "^0.2.2",
