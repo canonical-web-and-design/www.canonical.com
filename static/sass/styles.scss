@@ -64,3 +64,10 @@ time {
 .p-list-step.is-split {
   column-gap: 8rem;
 }
+
+// XXX Fix for inline image SVGs that have no dimensions set
+.p-inline-images__item > img {
+  max-height: 5rem;
+  max-width: 9rem;
+  width: 100%;
+}
