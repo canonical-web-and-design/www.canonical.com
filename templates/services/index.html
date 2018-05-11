@@ -4,7 +4,7 @@
 {% block meta_description %}Canonical provides commercial services for Ubuntu’s users, while working with hardware manufacturers, software vendors and cloud partners to certify Ubuntu.{% endblock %}
 
 {% block content %}
-<section class="p-strip is-bordered">
+<section class="p-strip is-deep is-bordered">
   <div class="row">
     <div class="col-8">
       <h1>Services that make the most of Ubuntu</h1>
@@ -26,7 +26,7 @@
 
 <section class="p-strip">
   <div class="row">
-    <h2 class="p-muted-heading u-align--center">A selection of customers using our services</h2>
+    <h2 class="p-muted-heading u-align-text--center">A selection of customers using our services</h2>
     <ul class="p-inline-images">
       <li class="p-inline-images__item">
         <img src="{{ ASSET_SERVER_URL }}e7c7aa47-logo-wikimedia-foundation.png" alt="Wikimedia logo" />
@@ -75,44 +75,36 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-6">
-      <ol class="p-list-step">
-        <li class="p-list-step__item">
-          <h3 class="p-list-step__title">
-          <span class="p-list-step__bullet">1</span>
-          Plan and install
-        </h3>
-          <p>We examine your business problem and operational requirements before building and installing a proposed solution. Performance is monitored and a full report accompanies the resulting deployment recommendations.</p>
-        </li>
-
-        <li class="p-list-step__item">
-          <h3 class="p-list-step__title">
-          <span class="p-list-step__bullet">2</span>
-          Deploy
-        </h3>
-          <p>The system is now rolled out, configured for optimum security and performance. At this stage, your Ubuntu Advantage subscription begins, making management and support more cost-effective from this point.</p>
-        </li>
-      </ol>
-    </div>
-    <div class="col-6">
-      <ol class="p-list-step">
-        <li class="p-list-step__item">
-          <h3 class="p-list-step__title">
-          <span class="p-list-step__bullet">3</span>
-          Train
-        </h3>
-          <p>Training is a vital element of a successful handover of the new system.  The transfer of detailed knowledge to your team on how to manage your deployment is critical. For clouds, we also cover scaling and moving workloads.</p>
-        </li>
-
-        <li class="p-list-step__item">
-          <h3 class="p-list-step__title">
-          <span class="p-list-step__bullet">4</span>
-          Manage
-        </h3>
-          <p>As your business evolves, we collaborate closely with your team to monitor and optimise your deployment on an ongoing basis, taking advantage of any opportunities to enhance effectiveness and efficiency</p>
-        </li>
-      </ol>
-    </div>
+    <ol class="p-list-step is-split">
+      <li class="p-list-step__item">
+        <h3 class="p-list-step__title">
+        <span class="p-list-step__bullet">1</span>
+        Plan and install
+      </h3>
+        <p>We examine your business problem and operational requirements before building and installing a proposed solution. Performance is monitored and a full report accompanies the resulting deployment recommendations.</p>
+      </li>
+      <li class="p-list-step__item">
+        <h3 class="p-list-step__title">
+        <span class="p-list-step__bullet">2</span>
+        Deploy
+      </h3>
+        <p>The system is now rolled out, configured for optimum security and performance. At this stage, your Ubuntu Advantage subscription begins, making management and support more cost-effective from this point.</p>
+      </li>
+      <li class="p-list-step__item">
+        <h3 class="p-list-step__title">
+        <span class="p-list-step__bullet">3</span>
+        Train
+      </h3>
+        <p>Training is a vital element of a successful handover of the new system.  The transfer of detailed knowledge to your team on how to manage your deployment is critical. For clouds, we also cover scaling and moving workloads.</p>
+      </li>
+      <li class="p-list-step__item">
+        <h3 class="p-list-step__title">
+        <span class="p-list-step__bullet">4</span>
+        Manage
+      </h3>
+        <p>As your business evolves, we collaborate closely with your team to monitor and optimise your deployment on an ongoing basis, taking advantage of any opportunities to enhance effectiveness and efficiency</p>
+      </li>
+    </ol>
   </div>
 </section>
 
