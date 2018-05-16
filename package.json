@@ -9,7 +9,7 @@
     "copy-3rd-party-js": "mkdir -p static/js/modules && cp node_modules/cookie-policy/build/js/cookie-policy.js static/js/modules/ && cp node_modules/global-nav/build/js/global.js static/js/modules/",
     "copy-3rd-party-css": "mkdir -p static/sass/modules && cp node_modules/cookie-policy/build/css/cookie-policy.css static/sass/modules/ && cp node_modules/global-nav/build/css/main.css static/sass/modules/",
     "watch": "watch -p 'static/sass/**/*.scss' -c 'yarn run build'",
-    "serve": "talisker.gunicorn webapp.wsgi --reload --timeout 9999 --access-logfile - --error-logfile - --bind 0.0.0.0:${PORT}",
+    "serve": "talisker.gunicorn webapp.wsgi --reload --log-level debug --timeout 9999 --access-logfile - --error-logfile - --bind 0.0.0.0:${PORT}",
     "test": "sass-lint static/**/*.scss --verbose --no-exit",
     "clean": "rm -rf node_modules yarn-error.log css static/css static/sass/modules static/js/modules *.log *.sqlite _site/ build/ .jekyll-metadata .bundle"
   },
