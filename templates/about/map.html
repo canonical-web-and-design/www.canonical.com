@@ -24,16 +24,14 @@
     </div>
     </section>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC35oed1OKOATAdzQ9VtpdE1ZeNgjVsSKE"></script>
     <script>
-    function initialize() {
-      var starting = new google.maps.LatLng(40, 0);
-      var mapOptions = {
-        zoom: 2,
-        scrollwheel: false,
-        center: starting
-      }
-      var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+    var map;
+     function initialize() {
+       map = new google.maps.Map(document.getElementById('map-canvas'), {
+         center: new google.maps.LatLng(40,0),
+         zoom: 2,
+         scrollwheel: false
+       });
       var londonInfo = new google.maps.InfoWindow({
         content: '<h2>London, United Kingdom</h2>' +
         '<p>Canonical Group Limited <br />' +
@@ -190,7 +188,8 @@
               japanInfo.open(map, japan);
             });
           }
-          google.maps.event.addDomListener(window, 'load', initialize);
+          //google.maps.event.addDomListener(window, 'load', initialize);
         </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpUczj_UeVLvk3FlIlPnz7J5nhLwDOJIU&callback=initialize" async defer></script>
   </body>
 </html>
