@@ -12,6 +12,5 @@ feedparser==5.2.1
 requests==2.10.0
 requests-cache==0.4.12
 python-dateutil==2.7.0
-talisker==0.9.8
-# Gunicorn 19.7.1 has a bug that errors with "--umask=0". Update when possible.
-gunicorn==19.7.0
+talisker==0.9.13
+gunicorn[gevent]
