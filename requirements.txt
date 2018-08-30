@@ -12,5 +12,6 @@ feedparser==5.2.1
 requests==2.10.0
 requests-cache==0.4.12
 python-dateutil==2.7.0
+statsd<3.3.0
 talisker==0.9.13
 gunicorn[gevent]
