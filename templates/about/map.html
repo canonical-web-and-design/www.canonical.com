@@ -46,6 +46,12 @@
         '2301 W Anderson Ln <br />' +
         'Austin, TX 78757<br />USA</p>'
       });
+      var bostonInfo = new google.maps.InfoWindow({
+        content: '<h2>Boston, USA</h2>' +
+        '<p>Canonical USA, Inc. <br />' +
+        '18 Tremont Street, Suite 210 <br />' +
+        'Boston, MA 02108 <br />USA</p>'
+      });
       var shanghaiInfo = new google.maps.InfoWindow({
         content: '<h2>Shanghai, China</h2>' +
         '<p>Room 1246, 12F <br />' +
@@ -98,6 +104,11 @@
               map: map,
               title: "Austin, United States"
             });
+            var boston = new google.maps.Marker({
+              position: new google.maps.LatLng(42.359195, -71.059646),
+              map: map,
+              title: "Boston, United States"
+            });
             var shanghai = new google.maps.Marker({
               position: new google.maps.LatLng(31.1747322, 121.4351965),
               map: map,
@@ -126,6 +137,7 @@
 
             google.maps.event.addListener(london, 'click', function() {
               austinInfo.close();
+              bostonInfo.close();
               shanghaiInfo.close();
               beijingInfo.close();
               taipeiInfo.close();
@@ -134,6 +146,7 @@
               londonInfo.open(map, london);
             });
             google.maps.event.addListener(austin, 'click', function() {
+              bostonInfo.close();
               londonInfo.close();
               shanghaiInfo.close();
               beijingInfo.close();
@@ -142,8 +155,19 @@
               japanInfo.close();
               austinInfo.open(map, austin);
             });
+            google.maps.event.addListener(boston, 'click', function() {
+              austinInfo.close();
+              londonInfo.close();
+              shanghaiInfo.close();
+              beijingInfo.close();
+              taipeiInfo.close();
+              iomInfo.close();
+              japanInfo.close();
+              bostonInfo.open(map, boston);
+            });
             google.maps.event.addListener(shanghai, 'click', function() {
               austinInfo.close();
+              bostonInfo.close();
               londonInfo.close();
               beijingInfo.close();
               taipeiInfo.close();
@@ -153,6 +177,7 @@
             });
             google.maps.event.addListener(beijing, 'click', function() {
               austinInfo.close();
+              bostonInfo.close();
               shanghaiInfo.close();
               londonInfo.close();
               taipeiInfo.close();
@@ -162,6 +187,7 @@
             });
             google.maps.event.addListener(taipei, 'click', function() {
               austinInfo.close();
+              bostonInfo.close();
               shanghaiInfo.close();
               beijingInfo.close();
               londonInfo.close();
@@ -171,6 +197,7 @@
             });
             google.maps.event.addListener(iom, 'click', function() {
               austinInfo.close();
+              bostonInfo.close();
               shanghaiInfo.close();
               beijingInfo.close();
               taipeiInfo.close();
@@ -180,6 +207,7 @@
             });
             google.maps.event.addListener(japan, 'click', function() {
               austinInfo.close();
+              bostonInfo.close();
               shanghaiInfo.close();
               beijingInfo.close();
               taipeiInfo.close();
