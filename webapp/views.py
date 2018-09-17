@@ -7,12 +7,14 @@ from django_template_finder_view import TemplateFinder
 from webapp.templatetags.raw_feeds import get_raw_json_feed
 from django.views.static import serve
 
+
 def cert_view(request):
     return serve(
         request,
         path='files/secure-boot-master-ca.crl',
         document_root=settings.STATIC_ROOT
     )
+
 
 class GreenhouseVacancies(TemplateView):
     template_name = "careers/all-vacancies.html"
