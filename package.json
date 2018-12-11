@@ -29,7 +29,7 @@
     "postcss": "^6.0.8",
     "postcss-cli": "^4.1.0",
     "sass-lint": "^1.10.2",
-    "vanilla-framework": "1.7.0"
+    "vanilla-framework": "1.8.0"
   },
   "dependencies": {
     "global-nav": "^0.2.3",
