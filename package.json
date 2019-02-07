@@ -23,12 +23,12 @@
   "author": "Canonical webteam",
   "license": "LGPL v3",
   "devDependencies": {
-    "autoprefixer": "^6.3.1",
+    "autoprefixer": "6.7.7",
     "cssnano": "3.10.0",
-    "node-sass": "^4.5.3",
-    "postcss": "^6.0.8",
-    "postcss-cli": "^4.1.0",
-    "sass-lint": "^1.10.2",
+    "node-sass": "4.9.0",
+    "postcss": "6.0.22",
+    "postcss-cli": "4.1.1",
+    "sass-lint": "1.12.1",
     "vanilla-framework": "1.8.0"
   },
   "dependencies": {
