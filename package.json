@@ -25,11 +25,11 @@
   "devDependencies": {
     "autoprefixer": "9.4.7",
     "cssnano": "3.10.0",
-    "node-sass": "4.9.0",
-    "postcss": "6.0.22",
+    "node-sass": "4.11.0",
+    "postcss": "6.0.23",
     "postcss-cli": "4.1.1",
     "sass-lint": "1.12.1",
-    "vanilla-framework": "1.8.0"
+    "vanilla-framework": "1.8.1"
   },
   "dependencies": {
     "global-nav": "^0.2.3",

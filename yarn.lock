@@ -2415,9 +2415,9 @@ postcss-zindex@^2.0.1:
     postcss "^5.0.4"
     uniqs "^2.0.0"
 
-postcss@6.0.22, postcss@^6.0.1, postcss@^6.0.8:
-  version "6.0.22"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.22.tgz#e23b78314905c3b90cbd61702121e7a78848f2a3"
+postcss@6.0.23:
+  version "6.0.23"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.23.tgz#61c82cc328ac60e677645f979054eb98bc0e3324"
   dependencies:
     chalk "^2.4.1"
     source-map "^0.6.1"
@@ -2431,6 +2431,14 @@ postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.13, postcss@^5.0
     js-base64 "^2.1.9"
     source-map "^0.5.6"
     supports-color "^3.2.3"
+
+postcss@^6.0.1, postcss@^6.0.8:
+  version "6.0.22"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.22.tgz#e23b78314905c3b90cbd61702121e7a78848f2a3"
+  dependencies:
+    chalk "^2.4.1"
+    source-map "^0.6.1"
+    supports-color "^5.4.0"
 
 postcss@^7.0.14:
   version "7.0.14"
@@ -3126,9 +3134,9 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
 
-vanilla-framework@1.8.0:
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-1.8.0.tgz#b5aacc3ce60a521b8de8f160cb505807aadc7869"
+vanilla-framework@1.8.1:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-1.8.1.tgz#0d7f5885cdbd1355a9f9d42d7596f9a1258b27ea"
 
 vendors@^1.0.0:
   version "1.0.2"
