@@ -542,6 +542,10 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
+"@canonical/global-nav@2.0.3":
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@canonical/global-nav/-/global-nav-2.0.3.tgz#32ec9883057c5f2c4528a111011aacaad971a780"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -2105,10 +2109,6 @@ glob@~3.1.21:
     graceful-fs "~1.2.0"
     inherits "1"
     minimatch "~0.2.11"
-
-global-nav@2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/global-nav/-/global-nav-2.0.2.tgz#2ff475d88b3995e53556039d591d919c49f2dd50"
 
 globals@^11.1.0:
   version "11.11.0"
