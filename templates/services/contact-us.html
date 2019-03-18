@@ -1,6 +1,7 @@
 {% extends "services/base_services.html" %}
 
 {% block title %}Contact Canonical | Services{% endblock %}
+{% block meta_copydoc %}https://docs.google.com/document/d/1qi9Tj8F6fxr1nGk3vs12qEMEXDSiFcVqKeFPqO9nh9U/edit{% endblock meta_copydoc %}
 
 {% block content %}
 
@@ -384,10 +385,12 @@
               <label class="mktoLabel mktoHasWidth" for="NewsletterOpt-In">I would like to receive occasional news from Canonical by email.</label>
             </li>
             <li>
-              All information provided will be handled in accordance with the Canonical <a href="https://www.ubuntu.com/legal" target="_blank">privacy policy</a>.
+              <p>
+                In submitting this form, I confirm that I have read and agree to <a class="p-link--external" href="https://www.ubuntu.com/legal/data-privacy/contact">Canonical’s Privacy Notice</a> and <a class="p-link--external" href="https://www.ubuntu.com/legal/data-privacy">Privacy Policy</a>.
+                </p>
             </li>
             <li class="mktField">
-              <button type="submit" class="mktoButton">Submit</button>
+              <button type="submit" class="p-button--positive u-no-margin--bottom mktoButton">Submit</button>
             </li>
           </ul>
           <input type="hidden" name="formid" class="mktoField" value="1240" />
