@@ -13,8 +13,8 @@
     "watch": "watch -p 'static/sass/**/*.scss' -c 'yarn run build'"
   },
   "dependencies": {
-    "@canonical/global-nav": "2.0.3",
-    "autoprefixer": "9.4.10",
+    "@canonical/global-nav": "2.0.5",
+    "autoprefixer": "9.5.0",
     "cookie-policy": "1.1.0",
     "cssnano": "4.1.10",
     "node-sass": "4.11.0",
