@@ -9,5 +9,4 @@ django-asset-server-url==0.1
 feedparser==5.2.1
 requests-cache==0.4.13
 python-dateutil==2.8.0
-talisker==0.14.2
-gunicorn[gevent]
+talisker[gunicorn]==0.14.2
