@@ -1,6 +1,8 @@
 Canonical.com website project
 ===
 
+**NOTE**: The canonical.com website is under reconstruction and will move to https://github.com/canonical-web-and-design/canonical.com
+
 ## Prerequisites
 
 1. Install docker:
