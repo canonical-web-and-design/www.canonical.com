@@ -11,8 +11,8 @@ from django.views.static import serve
 def cert_view(request):
     return serve(
         request,
-        path='files/secure-boot-master-ca.crl',
-        document_root=settings.STATIC_ROOT
+        path="files/secure-boot-master-ca.crl",
+        document_root=settings.STATIC_ROOT,
     )
 
 
@@ -21,8 +21,8 @@ class GreenhouseVacancies(TemplateView):
 
     def get_vacancies(self):
         feed = get_raw_json_feed(
-            'https://api.greenhouse.io/v1/boards/Canonical/jobs',
-            proxy='http://squid.internal:3128' if not settings.DEBUG else None,
+            "https://api.greenhouse.io/v1/boards/Canonical/jobs",
+            proxy="http://squid.internal:3128" if not settings.DEBUG else None,
         )
         if feed is False:
             return False, 0
@@ -30,24 +30,26 @@ class GreenhouseVacancies(TemplateView):
         job_departments = {}
         job_count = 0
 
-        for job in feed['jobs']:
+        for job in feed["jobs"]:
             job_count = job_count + 1
-            department = job['metadata'][0]['value']
+            department = job["metadata"][2]["value"]
             if department not in job_departments.keys():
                 job_departments[department] = []
 
-            job_departments[department].append({
-                'title': job['title'],
-                'url': job['absolute_url'],
-                'location': job['location'],
-            })
+            job_departments[department].append(
+                {
+                    "title": job["title"],
+                    "url": job["absolute_url"],
+                    "location": job["location"],
+                }
+            )
         return job_departments, job_count
 
     def get_context_data(self, **kwargs):
         context = super(GreenhouseVacancies, self).get_context_data(**kwargs)
         jobs, job_count = self.get_vacancies()
-        context['jobs'] = jobs
-        context['job_count'] = job_count
+        context["jobs"] = jobs
+        context["job_count"] = job_count
         return context
 
 
@@ -67,11 +69,11 @@ class CanonicalTemplateFinder(TemplateFinder):
         )
 
         # Add job role
-        context['job_id'] = self.request.GET.get('job_id')
+        context["job_id"] = self.request.GET.get("job_id")
 
         # Add level_* context variables
-        clean_path = self.request.path.strip('/')
-        for index, path, in enumerate(clean_path.split('/')):
+        clean_path = self.request.path.strip("/")
+        for index, path in enumerate(clean_path.split("/")):
             context["level_" + str(index + 1)] = path
 
         return context

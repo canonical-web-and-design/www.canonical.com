@@ -1,5 +1,8 @@
 Canonical.com website project
 ===
+[![CircleCI build status](https://circleci.com/gh/canonical-web-and-design/www.canonical.com.svg?style=shield)](https://circleci.com/gh/canonical-web-and-design/www.canonical.com) [![Code coverage](https://codecov.io/gh/canonical-web-and-design/www.canonical.com/branch/master/graph/badge.svg)](https://codecov.io/gh/canonical-web-and-design/www.canonical.com)
+
+**NOTE**: The canonical.com website is under reconstruction and will move to https://github.com/canonical-web-and-design/canonical.com
 
 ## Prerequisites
 
